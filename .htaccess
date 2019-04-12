@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^home$ media.php?page=home [L]
+RewriteRule ^tentang-kami\.html$ media.php?page=tentang-kami [L]
+RewriteRule ^cara-daftar\.html$ media.php?page=cara-daftar [L]
+RewriteRule ^kontak\.html$ media.php?page=kontak [L]
+RewriteRule ^registrasi\.html$ media.php?page=registrasi-siswa [L]
+RewriteRule ^daftar-casis-lolos-ver\.html$ media.php?page=daftar-casis-lolos-ver [L]
+RewriteRule ^daftar-casis-lulus-ujian\.html$ media.php?page=daftar-casis-lulus-ujian [L]
+RewriteRule ^aksi-registrasi\.html$ media.php?page=aksi-registrasi [L]
+
+Options All -Indexes
+</IfModule>
