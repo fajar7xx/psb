@@ -81,7 +81,10 @@ if(isset($_POST['submit'])){
 		
 		$password_baru = substr(md5(uniqid(rand(),1)),3,10);
 
+
 		// debug fungsi ini
+		// ganti pek ini https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string/13733588#13733588
+		// https://stackoverflow.com/questions/2593807/md5uniqid-makes-sense-for-random-unique-tokens
 		// fungsi acak kode
 		function randomCode($len="10"){
 			global $pass;
@@ -105,7 +108,7 @@ if(isset($_POST['submit'])){
 
 		// kirim notif aktifasi ke email peserta
 		$kode_aktifasi = randomCode();
-		$password_baru = substr(md5(uniqid(rand(),1)), 3, 10);
+		// $password_baru = substr(md5(uniqid(rand(),1)), 3, 10);
 		$tujuan = $email;
 		$subjek = "PSB Online Sekolah Medan - Kode Aktifasi dan password login calon siswa.";
 		$link = "http://localhost/psb/aktifasi.php?code='$kode_aktifasi'";

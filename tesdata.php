@@ -38,4 +38,31 @@ $kode = "USM";
 	echo "<br>";
 	echo $nextTestNo;
 
+	function randomCode($len="10"){
+		global $pass;
+		global $lchar;
+		$code = NULL;
+
+		for($i=0; $i<=$len; $i++){
+			$char = chr(rand(48, 122));
+			while(!preg_match("[a-zA-Z0-9]", $char)){
+				if($char == $lchar){
+					continue;
+				}
+				$char = chr(rand(48,90));
+			}
+			$pass .= $char;
+			$lchar .= $char;
+		}
+
+		return $pass;
+	}
+
+	// kirim notif aktifasi ke email peserta
+	// $kode_aktifasi = randomCode();
+	$kode_aktifasi = md5(uniqid(rand("[a-zA-Z0-9]")));
+
+	echo "<br>";
+	echo $kode_aktifasi;
+
 ?>
