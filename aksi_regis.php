@@ -1,166 +1,119 @@
-<?php
-require_once "config/koneksi.php";
-require_once "config/library.php";
+<?php  
+require_once 'config/koneksi.php';
+require_once 'config/library.php';
+require 'helper/helper.php';
 
 if(isset($_POST['submit'])){
 	
-	// anti XSS dan SQL Injection
-	function antiInjection($data){
-		$filter_sql = stripslashes(strip_tags(htmlspecialchars($data, ENT_QUOTES)));
-		// $filter_sql = mysqli_real_escape_string($data);
+	// debug $_POST 
+	// var_dump($_POST);
+	// print_r($_POST);
+	
+	$nisn = noInjetction($_POST['nisn']);
+	$nisn = mysqli_real_escape_string($conn, $nisn);
 
-		return $filter_sql;
-	}
+	$nama = noInjetction($_POST['nama']);
+	$nama = mysqli_real_escape_string($conn, $nama);
 
-	$nisn = mysqli_real_escape_string($conn, antiInjection($_POST['nisn']));
-	$nama = mysqli_real_escape_string($conn, antiInjection($_POST['nama']));
-	$asal = mysqli_real_escape_string($conn, antiInjection($_POST['asal']));
-	$email = mysqli_real_escape_string($conn, antiInjection($_POST['email']));
-	$kompetensi = mysqli_real_escape_string($conn, antiInjection($_POST['kompetensi']));
+	$asal = noInjetction($_POST['asal']);
+	$asal = mysqli_real_escape_string($conn, $asal);
 
-	// untuk kebutuhan tabel ujian
-	// nomor otomatis ujian
-	$kode = "USM";
+	$email = noInjetction($_POST['email']);
+	$email = mysqli_real_escape_string($conn, $email);
 
-	// baca current date tahun dan bulan
-	$today = date("ym");
-
-	$query_ujian = "SELECT MAX(no_ujian) AS LAST FROM ujian_masuk
-					WHERE no_ujian LIKE '$kode%'";
-	$sql_ujian = mysqli_query($conn, $query_ujian) or die(mysqli_error($conn));
-	$data_ujian = mysqli_fetch_assoc($sql_ujian);
-
-	// dicek dlu kebenaran datanya
-	$lastTest = $data_ujian['LAST'];
-
-	// baca no urut ujian dari yang terakhir
-	$lastNotes = substr($lastTest, 7, 4);
-
-	// nomor urut ujian di tambah 1
-	$nextNo = $lastNotes + 1;
-
-	// membuat format nomor urut usm berikutnya
-	$nextTestNo = $kode.$today.sprintf('%04s', $nextNo);
+	$kompetensi = noInjetction($_POST['kompetensi']);
+	$kompetensi = mysqli_real_escape_string($conn, $kompetensi);
 
 
+	// debug apakah jalan mendapatkan noujian dan no registrasi
+	// echo "No ujian anda " . getNoUjian();
+	// echo "<br>";
+	// echo "No Registrasi anda " . getNoReg();
 
-	// no otomatis registrasi
-	$kd = "PSB";
+	$query_cek = "SELECT
+					    *
+					FROM
+					    psb
+					WHERE
+					    nisn = '$nisn' OR email_siswa = '$email'";
+	$sql_cek = mysqli_query($conn, $query_cek)or die(mysqli_error($conn));
 
-	$query_reg = "SELECT MAX(no_reg) AS LAST FROM psb
-				WHERE no_reg LIKE '$kd%'";
-	$sql_reg = mysqli_query($conn, $query_reg)or die(mysqli_error($conn));
-	$data_reg = mysqli_fetch_assoc($sql_reg);
-
-	$lastReg = $data_reg['LAST'];
-
-	// baca no urus reg dari yang terakhir
-	$lastReg = substr($lastReg, 7, 4);
-
-	// nomor urut reg ditambah 1
-	$nextReg = $lastReg + 1;
-
-	// membuat format nomor reg
-	$nextRegNo = $kd.$today.sprintf('%04s', $nextReg);
-
-
-	// cek regisrasi
-	$query_cek_regis = "SELECT nisn, email_siswa FROM psb
-					WHERE nisn = '$nisn' OR email_siswa = '$email'";
-	$cek_regis = mysqli_query($conn, $query_cek_regis);
-
-	if(mysqli_num_rows($cek_regis) > 0){
-		echo "<script>alert('NISN atau email siswa telah terdaftar, coba menggunakan yang lain.')</script>";
-		echo "<meta http-equiv='refresh' content='0;url=registrasi.html'>";
-		exit();
+	if(mysqli_num_rows($sql_cek)){
+		echo "<script>
+				alert('NISN atau email siswa telah terdaftar, coba menggunakan yang lain.');
+				document.location.href='registrasi.html'
+			</script>";
 	}
 	else{
-		// cek apakah berhasil
-		// echo "<script>alert('pendaftaran berhasil')</script>";
-		// set password peserta
+		$no_pendaftaran = getNoReg();
+		$no_ujian = getNoUjian();
+		// cek apakah berhasil regis
+		// echo "<script>
+		// 		alert('selamat. calon peserta berhasil registasi');
+		// 		document.location.href='home'
+		// 	</script>";
 		
-		$password_baru = substr(md5(uniqid(rand(),1)),3,10);
+		// set password baru dengan panjang 10 karakter
+		$set_password_baru = substr(md5(uniqid(rand(),1)),1,10);
+		// var_dump($set_password_baru);
+		$kodeAktifasi = getKodeAktifasi(10);
 
 
-		// debug fungsi ini
-		// ganti pek ini https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string/13733588#13733588
-		// https://stackoverflow.com/questions/2593807/md5uniqid-makes-sense-for-random-unique-tokens
-		// fungsi acak kode
-		function randomCode($len="10"){
-			global $pass;
-			global $lchar;
-			$code = NULL;
+		// debug dlu untuk kirim email aktifasi atau cari tutorial untuk membuat aktigasi registrasi di php karena sepertinya ini sedikit bermasalah
+		// $sendTo = $email;
+		// $subjek = "PSB Online Sekolah Medan - Kode Aktifasi dan password login calon siswa.";
+		// $link = "http://localhost/psb/aktifasi.php?code='$kodeAktifasi'";
+		// $pesan = "Selamat, Anda Telah Terdaftar sebagai calon Siswa di Sekolah. klik link tautan berikut $link untuk aktifasi akun calon siswa. No Pendaftaran anda adalah $no_pendaftaran dan password anda adalah $set_password_baru. Silahkan login menggunakan no. pendaftaran dan password tersebut.";
+		// $from = "admin@localhost";
 
-			for($i=0; $i<=$len; $i++){
-				$char = chr(rand(48, 122));
-				while(!preg_match("[a-zA-Z0-9]", $char)){
-					if($char == $lchar){
-						continue;
-					}
-					$char = chr(rand(48,90));
-				}
-				$pass .= $char;
-				$lchar .= $char;
-			}
+		// $send_email = mail($sendTo, $subjek, $pesan);
 
-			return $pass;
-		}
+		// if($send_email){
+		// 	echo "<script>
+		// 		alert('pendaftaran telah berhasil. silahkan konfirmasi email anda');
+		// 	</script>";
+		// }
 
-		// kirim notif aktifasi ke email peserta
-		$kode_aktifasi = randomCode();
-		// $password_baru = substr(md5(uniqid(rand(),1)), 3, 10);
-		$tujuan = $email;
-		$subjek = "PSB Online Sekolah Medan - Kode Aktifasi dan password login calon siswa.";
-		$link = "http://localhost/psb/aktifasi.php?code='$kode_aktifasi'";
-		$pesan = "Selamat, Anda Telah Terdaftar sebagai calon Siswa di Sekolah. klik link tautan berikut $link untuk aktifasi akun calon siswa. No Pendaftaran anda adalah $nextRegNo dan password anda adalah $password_baru. Silahkan login menggunakan no. pendaftaran dan password tersebut.";
-		$from = "admin@localhost";
+		$query_psb = "INSERT INTO psb(
+					    no_reg,
+					    password,
+					    kode_aktivasi,
+					    id_kompetensi,
+					    nisn,
+					    nm_siswa,
+					    email_siswa,
+					    asal_sekolah
+					)
+					VALUES(
+					    '$no_pendaftaran',
+					    '$set_password_baru',
+					    '$kodeAktifasi',
+					    '$kompetensi',
+					    '$nisn',
+					    '$nama',
+					    '$email',
+					    '$asal')";
+		$sql_psb = mysqli_query($conn, $query_psb)or die(mysqli_error($conn));
 
-		$send_email = mail($tujuan, $subjek, $pesan);
-
-
-		// menyimpan ke tabel psb
-		$query_daftar = "INSERT INTO psb(
-						    no_reg,
-						    tgl_daftar,
-						    jam_daftar,
-						    password,
-						    kode_aktivasi,
-						    id_kompetensi,
-						    nisn,
-						    nm_siswa,,
-						    email_siswa,
-						    asal_sekolah,
-						    )
-						VALUES(
-								'$nextRegNo',
-								'$tgl_sekarang',
-								'$jam_sekarang',
-								'$password_baru',
-								'$kode_aktifasi',
-								'$kompetensi',
-								'$nisn',
-								'$nm_siswa',
-								'$email',
-								'$asal_sekolah'
-							)";
-		$sql_daftar = mysqli_query($conn, $query_daftar)or die(mysqli_connect_error($conn));
-
-		// menyimpan ke tabel ujian masuk
+		// tgl ujian titambahkan 7 hari setelah tgl pendaftaran
+		$tglujian = date('Y-m-d', strtotime('+7 days', strtotime($tgl_sekarang_lengkap)));
 		$query_ujian = "INSERT INTO ujian_masuk(
-						    no_ujian,
-						    no_reg,
-						    tgl_ujian
-						)
-						VALUES(
-						    '$nextTestNo',
-						    '$nextRegNo',
-						    '$tglujian'
-						)";
-		$sql_ujian = mysqli_query($conn, $query_ujian)or die(mysqli_connect_error($conn));
+							no_ujian, 
+							no_reg 
+							)
+							VALUES(
+							    '$no_ujian',
+							    '$no_pendaftaran')";
+		$sql_ujian = mysqli_query($conn, $query_ujian)or die(mysqli_error($conn));
 
-		if($send_email){
-			echo "<script>alert('Pendaftaran telah berhasil. kode aktifasi dan password login sudah dikirim ke email anda. harap mengeceknya di kotak email anda.')</script>";
-		}
-		echo "<meta http-equiv='refresh' content='0;url=home'>";
+		var_dump($sql_psb);
+		echo"<br>";
+		var_dump($sql_ujian);
 	}
+
 }
+
+
+
+
+?>

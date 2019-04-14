@@ -5,7 +5,7 @@ $seminggu = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"
 $hari = date("w");
 $hari_ini = $seminggu[$hari];
 
-$tgl_sekarang_lengkap = ("Ymd");
+$tgl_sekarang_lengkap = ("Y-m-d");
 $tgl_sekarang = ("d");
 $bln_sekarang = ("m");
 $thn_sekarang = ("Y");
