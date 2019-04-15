@@ -73,6 +73,7 @@ if(isset($_POST['submit'])){
 		// 		alert('pendaftaran telah berhasil. silahkan konfirmasi email anda');
 		// 	</script>";
 		// }
+<<<<<<< HEAD
 		
 		$to      = $email; // Send email to our user
 		$subject = 'Panitia PSB SMA Medan | Verifikasi Email'; // Give the email a subject 
@@ -100,6 +101,11 @@ if(isset($_POST['submit'])){
 					    no_reg,
 					    tgl_daftar,
 					    jam_daftar,
+=======
+
+		$query_psb = "INSERT INTO psb(
+					    no_reg,
+>>>>>>> master
 					    password,
 					    kode_aktivasi,
 					    id_kompetensi,
@@ -110,8 +116,11 @@ if(isset($_POST['submit'])){
 					)
 					VALUES(
 					    '$no_pendaftaran',
+<<<<<<< HEAD
 					    '$tgl_sekarang_lengkap',
 					    '$jam',
+=======
+>>>>>>> master
 					    '$set_password_baru',
 					    '$kodeAktifasi',
 					    '$kompetensi',
@@ -122,6 +131,7 @@ if(isset($_POST['submit'])){
 		$sql_psb = mysqli_query($conn, $query_psb)or die(mysqli_error($conn));
 
 		// tgl ujian titambahkan 7 hari setelah tgl pendaftaran
+<<<<<<< HEAD
 		// $tglujian = date('Y-m-d', strtotime('+7 days', strtotime($tgl_sekarang_lengkap)));
 		$query_ujian = "INSERT INTO ujian_masuk(
 							no_ujian, 
@@ -150,6 +160,21 @@ if(isset($_POST['submit'])){
 				document.location.href='registrasi.html'
 			</script>";
 		}
+=======
+		$tglujian = date('Y-m-d', strtotime('+7 days', strtotime($tgl_sekarang_lengkap)));
+		$query_ujian = "INSERT INTO ujian_masuk(
+							no_ujian, 
+							no_reg 
+							)
+							VALUES(
+							    '$no_ujian',
+							    '$no_pendaftaran')";
+		$sql_ujian = mysqli_query($conn, $query_ujian)or die(mysqli_error($conn));
+
+		var_dump($sql_psb);
+		echo"<br>";
+		var_dump($sql_ujian);
+>>>>>>> master
 	}
 
 }
