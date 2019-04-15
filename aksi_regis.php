@@ -73,9 +73,33 @@ if(isset($_POST['submit'])){
 		// 		alert('pendaftaran telah berhasil. silahkan konfirmasi email anda');
 		// 	</script>";
 		// }
+		
+		$to      = $email; // Send email to our user
+		$subject = 'Panitia PSB SMA Medan | Verifikasi Email'; // Give the email a subject 
+		$message = '
 
+		Selamat, Anda telah terdaftar!
+		Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+
+		------------------------
+		NISN: '.$nisn.'
+		No Pendaftaran : '.$no_pendaftaran.'
+		Password: '.$set_password_baru.'
+		------------------------
+
+		Please click this link to activate your account:
+		http://localhost/psb/aktifasi.php?code='.$kodeAktifasi.'
+
+		'; // Our message above including the link
+
+		$headers = 'From:noreply@yourwebsite.com' . "\r\n"; // Set from headers
+		mail($to, $subject, $message, $headers); // Send our email
+
+		$jam = date("His");
 		$query_psb = "INSERT INTO psb(
 					    no_reg,
+					    tgl_daftar,
+					    jam_daftar,
 					    password,
 					    kode_aktivasi,
 					    id_kompetensi,
@@ -86,6 +110,8 @@ if(isset($_POST['submit'])){
 					)
 					VALUES(
 					    '$no_pendaftaran',
+					    '$tgl_sekarang_lengkap',
+					    '$jam',
 					    '$set_password_baru',
 					    '$kodeAktifasi',
 					    '$kompetensi',
@@ -96,19 +122,34 @@ if(isset($_POST['submit'])){
 		$sql_psb = mysqli_query($conn, $query_psb)or die(mysqli_error($conn));
 
 		// tgl ujian titambahkan 7 hari setelah tgl pendaftaran
-		$tglujian = date('Y-m-d', strtotime('+7 days', strtotime($tgl_sekarang_lengkap)));
+		// $tglujian = date('Y-m-d', strtotime('+7 days', strtotime($tgl_sekarang_lengkap)));
 		$query_ujian = "INSERT INTO ujian_masuk(
 							no_ujian, 
-							no_reg 
+							no_reg,
+							tgl_ujian
 							)
 							VALUES(
 							    '$no_ujian',
-							    '$no_pendaftaran')";
+							    '$no_pendaftaran',
+								'$tgl_ujian')";
 		$sql_ujian = mysqli_query($conn, $query_ujian)or die(mysqli_error($conn));
 
-		var_dump($sql_psb);
-		echo"<br>";
-		var_dump($sql_ujian);
+		// var_dump($sql_psb);
+		// echo"<br>";
+		// var_dump($sql_ujian);
+		// untuk mengecek apakah sudah berhasil atau belum
+		if($sql_psb == TRUE && $sql_ujian == TRUE){
+			echo "<script>
+				alert('pendaftaran telah berhasil. silahkan cek email anda. dan tunggu proses verifikasi data dari panitia kami');
+				document.location.href='home'
+			</script>";		
+		}
+		else{
+			echo "<script>
+				alert('terdapat kesalahan silahkan ulangi kembali pendaftaran.');
+				document.location.href='registrasi.html'
+			</script>";
+		}
 	}
 
 }
