@@ -35,6 +35,12 @@ switch($pg){
 		include "registrasi_siswa.php";
 		break;
 
+	// aktifasi akun
+	case 'aktifasi':
+		if(!file_exists("aktifasi.php")) die("file tidak tersedia");
+		include "aktifasi.php";
+		break;
+
 	// aksi registrasi siswa
 	case 'aksi-registrasi':
 		if(!file_exists("aksi_regis.php")) die("file aksi registrasi tidak tersedia");
@@ -54,6 +60,4 @@ switch($pg){
 		break;
 
 }
-
-
 ?>

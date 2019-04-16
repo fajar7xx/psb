@@ -66,6 +66,7 @@
 					<div class="list-group mt-4">
 						<a href="#" class="list-group-item list-group-item-action active">Login Calon Siswa</a>
 						<a href="casis/sign-in.html" class="list-group-item list-group-item-action">Sign In</a>
+						<a href="aktifasi.html" class="list-group-item list-group-item-action">Aktifasi Akun</a>
 					</div>
 				</div>
 				<div class="col-sm-8">

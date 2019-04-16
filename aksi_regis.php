@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
 		if($sql_psb == TRUE && $sql_ujian == TRUE){
 			echo "<script>
 				alert('pendaftaran telah berhasil. silahkan cek email anda. dan tunggu proses verifikasi data dari panitia kami');
-				document.location.href='cetak_registrasi.php?code=+$kodeAktifasi';
+				document.location.href='cetak_registrasi.php?code=$kodeAktifasi';
 			</script>";		
 		}
 		else{

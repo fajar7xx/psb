@@ -1,5 +1,8 @@
 <?php  
-
+// ketiak memangl helper wajib menyertakan file koneksi
+// 
+// 
+// 
 // anti xss dan sql anti injection
 function noInjetction($data){
 	$filterSql = stripslashes(strip_tags(htmlspecialchars($data, ENT_QUOTES)));

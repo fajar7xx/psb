@@ -1,6 +1,7 @@
 <?php  
 date_default_timezone_set('Asia/Jakarta');
 
+// pengaturan waktu, jam, hari
 $seminggu = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
 $hari = date("w");
 $hari_ini = $seminggu[$hari];
