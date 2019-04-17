@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2019 at 07:19 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Apr 17, 2019 at 06:06 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -179,7 +179,7 @@ INSERT INTO `identitas_web` (`id_identitas`, `nm_website`, `nm_sekolah`, `alamat
 CREATE TABLE `informasi` (
   `id_info` int(5) NOT NULL,
   `judul_info` varchar(30) NOT NULL,
-  `deskripsi_info` text NOT NULL,
+  `deskripsi` text NOT NULL,
   `pic_info` varchar(100) NOT NULL,
   `aktif_info` enum('Y','N') NOT NULL DEFAULT 'Y'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -188,8 +188,8 @@ CREATE TABLE `informasi` (
 -- Dumping data for table `informasi`
 --
 
-INSERT INTO `informasi` (`id_info`, `judul_info`, `deskripsi_info`, `pic_info`, `aktif_info`) VALUES
-(1, 'Penerimaan Siswa Baru', 'Pendaftaran siswa baru SMK XYZ akan segera dibuka. Terbagi kedalam 2 gelombang. Informasi lebih lanjut dapat menghubungi Panitia PSB yang tertera di menu kontak atau datang ke sekolah.', '673096Logo-Tut-Wuri-Handayani.png', 'Y');
+INSERT INTO `informasi` (`id_info`, `judul_info`, `deskripsi`, `pic_info`, `aktif_info`) VALUES
+(1, 'Penerimaan Siswa Baru', 'Pendaftaran siswa baru SEKOLAH MEDAN akan segera dibuka. Terbagi kedalam 2 gelombang. Informasi lebih lanjut dapat menghubungi Panitia yang tertera di menu kontak atau datang ke sekolah.', '673096Logo-Tut-Wuri-Handayani.png', 'Y');
 
 -- --------------------------------------------------------
 
@@ -213,7 +213,7 @@ INSERT INTO `kompetensi` (`id_kompetensi`, `bid_kompetensi`, `aktif`) VALUES
 (13, 'Multimedia', 'Y'),
 (14, 'Rekayasa Perangkat Lunak', 'Y'),
 (15, 'Teknik Komputer dan Jaringan', 'Y'),
-(16, 'Administrasi Perkantora', 'Y');
+(16, 'Administrasi Perkantoran', 'Y');
 
 -- --------------------------------------------------------
 
@@ -345,7 +345,10 @@ INSERT INTO `psb` (`no_reg`, `tgl_daftar`, `jam_daftar`, `password`, `kode_aktiv
 ('PSB16090004', '2016-09-25', '22:41:01', '345dc7999f', 'wRJvGjpDE9', 'Y', 'Sudah', 11, '0', 12130987, 'Renata', 'Tangerang', '1998-02-04', 'P', 'Islam', 2, 2, 'Kandung', 165, 55, '-', 'Tangerang', 'Tangerang', 15560, '09876787655', '0', 'sulis@localhost', 'rumah orang tua', 'Motor', 'SMP N 12 tangerang', 'Tangerang', 'D3-1234', '1998-11-02', 1998, 34, '-', '-', '-', 'Tes', 'Tes', 'Tes', '-', 3000000, 0, 'Tangerang', 'Tangerang', 15560, '0', '-', '-', 0, '-', '0', 'orang tua'),
 ('PSB16100005', '2016-10-20', '08:53:01', '34a4e0a49e', '7BF9gqUAEC', 'Y', 'Sudah', 11, '11160002', 43566078, 'Andriana', 'Jakarta', '2000-02-03', 'P', 'Islam', 2, 3, 'Kandung', 165, 48, 'A', 'Graha Kencana Blok D No.4', 'Tangerang', 15560, '08988262556', '0', 'andriana@localhost', 'Rumah orang tua', 'Motor', 'SMP Bina Bangsa', 'Jl. Perintis Kemerdekaan I No. 1', 'DM-4322', '2011-06-12', 2011, 38.7, '-', '-', '-', 'Andriansyah Doni', 'Nurdiyah Sari', 'Staff Pengajar', 'Administrasi Keuangan', 4500000, 3875000, 'Graha Kencana Blok D No.4', 'Tangerang', 15560, '085774993266', '-', '-', 0, '-', '0', 'Orang tua'),
 ('PSB16100006', '2016-10-20', '14:00:38', '9d227b1959', 'ROqHvHzReA', 'Y', 'Belum', 11, '', 87654688, 'Mumun', '', '0000-00-00', 'L', '', 0, 0, '', 0, 0, '', '', '', 0, '', '', 'mumun@localhost', '', '', 'SMP Bina Bangsa', '', '', '0000-00-00', 0000, 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', 0, '', '', ''),
-('PSB17060007', '2017-06-03', '04:25:45', '201da82df0', 'VtEMTCqB74', 'Y', 'Belum', 12, '', 78123811, 'Agus Saputra', '', '0000-00-00', 'L', '', 0, 0, '', 0, 0, '', '', '', 0, '', '', 'takehikoboyz@gmail.com', '', '', 'SMPN 1 Arjawinangun', '', '', '0000-00-00', 0000, 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', 0, '', '', '');
+('PSB17060007', '2017-06-03', '04:25:45', '201da82df0', 'VtEMTCqB74', 'Y', 'Belum', 12, '', 78123811, 'Agus Saputra', '', '0000-00-00', 'L', '', 0, 0, '', 0, 0, '', '', '', 0, '', '', 'takehikoboyz@gmail.com', '', '', 'SMPN 1 Arjawinangun', '', '', '0000-00-00', 0000, 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', 0, '', '', ''),
+('PSB19010001', '2019-04-14', '13:16:00', '201da82df0', 'VtEMTCqB75', 'N', 'Belum', 0, '', 9854234512, 'nurdin', '', '0000-00-00', 'L', '', 0, 0, '', 0, 0, '', '', '', 0, '', '', 'nurdin@gmail.com', '', '', 'SMP Swasta Pahlawan Aja', '', '', '0000-00-00', 0000, 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', 0, '', '', ''),
+('PSB19040002', '0000-00-00', '00:00:00', '0a11cad23c', 'N5gVroeT66', 'N', 'Belum', 12, '', 12345221233, 'nadiah sahputri', '', '0000-00-00', 'L', '', 0, 0, '', 0, 0, '', '', '', 0, '', '', 'sada@mail.com', '', '', 'smp n 12 medan', '', '', '0000-00-00', 0000, 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', 0, '', '', ''),
+('PSB19040003', '2019-04-16', '22:37:27', '761db2722e', 'mYLNVyMtfr', 'Y', 'Belum', 12, '', 76563423, 'nadiah siagian', '', '0000-00-00', 'L', '', 0, 0, '', 0, 0, '', '', '', 0, '', '', 'nadiah@gmail.com', '', '', 'SMPN 12 Medan', '', '', '0000-00-00', 0000, 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, '', '', '', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -369,12 +372,37 @@ CREATE TABLE `ujian_masuk` (
 
 INSERT INTO `ujian_masuk` (`no_ujian`, `no_reg`, `tgl_ujian`, `jam_ujian`, `ruang_ujian`, `hasil_ujian`, `ket_ujian`) VALUES
 ('USM16060001', 'PSB16060001', '2016-06-15', '09:00:00', 'R101', 78, 'Lulus'),
-('USM16060002', 'PSB16060002', '2016-06-15', '00:00:00', '', 0, 'Belum'),
-('USM16060003', 'PSB16060003', '2016-06-18', '10:00:00', 'R102', 0, 'Belum'),
+('USM16060002', 'PSB16060002', '2016-06-15', '00:00:00', '', 40, 'Tidak'),
+('USM16060003', 'PSB16060003', '2016-06-18', '10:00:00', 'R102', 45, 'Tidak'),
 ('USM16090004', 'PSB16090004', '2016-09-28', '00:00:00', '', 0, 'Belum'),
 ('USM16100005', 'PSB16100005', '2016-10-23', '08:00:00', 'R.202', 85, 'Lulus'),
 ('USM16100006', 'PSB16100006', '2016-10-23', '00:00:00', '', 0, 'Belum'),
-('USM17060007', 'PSB17060007', '2017-06-06', '00:00:00', '', 0, 'Belum');
+('USM17060007', 'PSB17060007', '2017-06-06', '00:00:00', '', 0, 'Belum'),
+('USM19040008', 'PSB19040002', '0000-00-00', '00:00:00', '', 0, 'Belum'),
+('USM19040009', 'PSB19040003', '2019-04-23', '00:00:00', '', 0, 'Belum');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `views_ujian_masuk`
+-- (See below for the actual view)
+--
+CREATE TABLE `views_ujian_masuk` (
+`no_reg` varchar(11)
+,`nm_siswa` varchar(50)
+,`nisn` bigint(10)
+,`asal_sekolah` varchar(40)
+,`ket_ujian` enum('Belum','Lulus','Tidak')
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `views_ujian_masuk`
+--
+DROP TABLE IF EXISTS `views_ujian_masuk`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `views_ujian_masuk`  AS  select `no_reg` AS `no_reg`,`nm_siswa` AS `nm_siswa`,`nisn` AS `nisn`,`asal_sekolah` AS `asal_sekolah`,`ujian_masuk`.`ket_ujian` AS `ket_ujian` from (`psb` join `ujian_masuk` on((`no_reg` = `ujian_masuk`.`no_reg`))) ;
 
 --
 -- Indexes for dumped tables

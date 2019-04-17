@@ -93,7 +93,18 @@
 		<script src="bower_components/datatables/media/js/dataTables.bootstrap4.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$('#tabel').DataTable();
+				$('#tabel').DataTable({
+					"processing" : true,
+					"serverSide" : true,
+					"ajax" : "config/dt_daftarsiswa.php"
+				});
+			});
+			$(document).ready(function(){
+				$('#tabel2').DataTable({
+					"processing" : true,
+					"serverSide" : true,
+					"ajax" : "config/dt_pdb.php"
+				});
 			});
 		</script>
 	</body>
