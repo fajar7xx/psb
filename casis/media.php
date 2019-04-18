@@ -73,25 +73,10 @@ $nama = $data['nm_siswa'];
       </div>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="profil-siswa">
           <i class="fas fa-user"></i>
           <span>Profil Siswa</span></a>
       </li>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
-          </div>
-        </div>
-      </li> -->
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
@@ -102,48 +87,16 @@ $nama = $data['nm_siswa'];
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="#">Unggah Dokumen</a>
-            <a class="collapse-item" href="#">Input Mata Pelajaran</a>
-            <a class="collapse-item" href="#">Input Nilai Rapor</a>
-            <a class="collapse-item" href="#">Ujian Saringan Masuk</a>
+            <a class="collapse-item" href="unggah">Unggah Dokumen</a>
+            <a class="collapse-item" href="mapel">Input Mata Pelajaran</a>
+            <a class="collapse-item" href="nilai-rapor">Input Nilai Rapor</a>
+            <a class="collapse-item" href="ujian">Ujian Saringan Masuk</a>
           </div>
         </div>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <!-- <div class="sidebar-heading">
-        Addons
-      </div> -->
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li> -->
-
-      <!-- Nav Item - Charts -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li> -->
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -219,7 +172,7 @@ $nama = $data['nm_siswa'];
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Apakah Kamu yakin ingin keluar!.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="sign_out.php">Logout</a>
@@ -239,12 +192,12 @@ $nama = $data['nm_siswa'];
   <script src="assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="assets/vendor/chart.js/Chart.min.js"></script>
+  <!-- <script src="assets/vendor/chart.js/Chart.min.js"></script> -->
 
   <!-- Page level custom scripts -->
-  <script src="assets/js/demo/chart-area-demo.js"></script>
+  <!-- <script src="assets/js/demo/chart-area-demo.js"></script>
   <script src="assets/js/demo/chart-pie-demo.js"></script>
-
+ -->
 </body>
 
 </html>
