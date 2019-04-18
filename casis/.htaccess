@@ -2,8 +2,8 @@
 RewriteEngine on
 
 RewriteRule ^sign-in\.html$ sign_in.php [L]
-RewriteRule ^verifikasi\.html$ cek_signin.php?page=cek-signin [L]
-RewriteRule ^sign-out\.html$ sign_out.php?page=sign-out [L]
+# RewriteRule ^sign-out$ sign_out.php [L]
+RewriteRule ^home$ media.php?page=home [L]
 
 Options All -Indexes
 </IfModule>
