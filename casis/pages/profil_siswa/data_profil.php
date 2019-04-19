@@ -10,17 +10,7 @@ $noregis = $_GET['reg'];
       </div>
       <!-- Card Body -->
       <div class="card-body">
-        <!-- <h3 class="card-title text-center mb-4 mt-1">Biodata Diri</h3> -->
-        <!-- <hr> -->
         <form action="" method="post" action="update_profil.php">
-          <!-- <div class="form-group row">
-            <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="nama" id="nama">
-            </div>
-          </div> -->
-
-            
           <div class="accordion" id="accordionExample">
             <!-- biodata pribada -->
             <div class="card">
@@ -36,21 +26,21 @@ $noregis = $_GET['reg'];
                   <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                      <input type="text" class="form-control" name="nama" id="nama" value="<?=$data['nm_siswa'];?>">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Tempat Lahir</label>
+                    <label for="tempat" class="col-sm-2 col-form-label">Tempat Lahir</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                      <input type="text" class="form-control" name="tempat" id="tempat" value="<?=$data['tmp_lahir'];?>">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Tanggal Lahir</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                    <div class="col-sm-4">
+                      <input type="date" class="form-control" name="lahir" id="lahir" value="<?=$data['tgl_lahir'];?>">
                     </div>
                   </div>
 
