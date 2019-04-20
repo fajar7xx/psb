@@ -45,114 +45,146 @@ $noregis = $_GET['reg'];
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">jenis Kelamin</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="jk" class="col-sm-2 col-form-label">jenis Kelamin</label>
+                    <div class="col-sm-4">
+                      <select name="jk" id="jk" class="form-control">
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <?php if($data['jns_kelamin'] === 'L'): ?>
+                        <option value="L" Selected>Laki - Laki</option>
+                        <?php elseif($data['jns_kelamin'] === "P"): ?>
+                        <option value="P" selected>Perempuan</option>
+                      <?php endif; ?>
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Agama</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="agama" class="col-sm-2 col-form-label">Agama</label>
+                    <div class="col-sm-4">
+                      <select name="agama" id="agama" class="form-control">
+                        <option value="">Pilih Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Protesta">Protesta</option>
+                        <option value="Budha">Budha</option>
+                        <option value="Hindu">Hindu</option>
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Anak Ke</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="anakke" class="col-sm-2 col-form-label">Anak Ke</label>
+                    <div class="col-sm-4">
+                      <input type="number" class="form-control" name="anakke" id="anakke">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Jumlah Saudara</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="jmlsaudara" class="col-sm-2 col-form-label">Jumlah Saudara</label>
+                    <div class="col-sm-4">
+                      <input type="number" class="form-control" name="jmlsaudara" id="jmlsaudara">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Status Anak</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="statusanak" class="col-sm-2 col-form-label">Status Anak</label>
+                    <div class="col-sm-4">
+                      <select name="statusanak" id="statusanak" class="form-control">
+                        <option value="">Pilih Status Anak</option>
+                        <option value="Anak Kandung">Anak Kandung</option>
+                        <option value="Anak Angkat">Anak Angkat</option>
+                        <option value="Anak Asuh">Anak Asuh</option> 
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Tinggi Badan</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="tinggibdn" class="col-sm-2 col-form-label">Tinggi Badan (cm)</label>
+                    <div class="col-sm-4">
+                      <input type="number" class="form-control" name="tinggibdn" id="tinggibdn">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Berat Badan</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="beratbdn" class="col-sm-2 col-form-label">Berat Badan (kg)</label>
+                    <div class="col-sm-4">
+                      <input type="number" class="form-control" name="beratbdn" id="beratbdn">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Golongan Darah</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="goldarah" class="col-sm-2 col-form-label">Golongan Darah</label>
+                    <div class="col-sm-4">
+                      <select name="goldarah" id="goldarah" class="form-control">
+                        <option value="">Pilih Golongan darah</option>
+                        <option value="A">Gologan Darah A</option>
+                        <option value="B">Gologan Darah B</option>
+                        <option value="AB">Gologan Darah AB</option>
+                        <option value="O">Gologan Darah O</option>
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Alamat</label>
+                    <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                      <textarea name="alamat" id="alamat" cols="30" rows="5" class="form-control"></textarea>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Kota/Kab</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="kotakab" class="col-sm-2 col-form-label">Kota/Kab</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" name="kotakab" id="kotakab">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Kode Pos</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="kodepos" class="col-sm-2 col-form-label">Kode Pos</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" name="kodepos" id="kodepos">
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">NO. Hp</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="nohp" class="col-sm-2 col-form-label">NO. Hp</label>
+                    <div class="col-sm-6">
+                      <input type="tel" class="form-control" name="nohp" id="nohp">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">No Telp</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="notel" class="col-sm-2 col-form-label">No Telp</label>
+                    <div class="col-sm-6">
+                      <input type="tel" class="form-control" name="notel" id="notel">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Alamat Email</label>
+                    <label for="email" class="col-sm-2 col-form-label">Alamat Email</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                      <input type="email" class="form-control" name="email" id="email">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Status Rumah</label>
+                    <label for="statusrmh" class="col-sm-2 col-form-label">Status Rumah</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                      <input type="text" class="form-control" name="statusrmh" id="statusrmh">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Kendaraan</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" id="nama">
+                    <label for="kendaraan" class="col-sm-2 col-form-label">Kendaraan</label>
+                    <div class="col-sm-6">
+                      <select name="kendaraan" id="kendaraan" class="form-control">
+                        <option value="">Pilih Kendaraan</option>
+                        <option value="Kendaraan Umum">Kendaraan Umum</option>
+                        <option value="Sepeda Motor">Sepeda Motor</option>
+                        <option value="Mobil">Mobil</option>
+                        <option value="Sepeda">Sepeda</option>
+                        <option value="Jalan Kaki">Jalan Kaki</option>
+                      </select>
                     </div>
                   </div>
 

@@ -1,6 +1,7 @@
 <?php  
 require_once "../config/koneksi.php";
 require_once "../lib/inc.session.sis.php";
+require_once "../helper/helper.php";
 
 $noreg = $_SESSION['noreg'];
 
