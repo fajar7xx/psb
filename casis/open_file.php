@@ -20,6 +20,12 @@ switch($page){
 	if(!file_exists("pages/profil_siswa/data_profil.php"))die("file tidak ditemukan");
 	include "pages/profil_siswa/data_profil.php";
 	break;
+
+	// update profil
+	case 'update-profil';
+	if(!file_exists("pages/profil_siswa/update_profil.php"))die("file tidak ditemukan");
+		include("pages/profil_siswa/update_profil.php");
+		break;
 	
 	// dokumen
 	case 'unggah';

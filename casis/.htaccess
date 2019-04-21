@@ -5,10 +5,12 @@ RewriteRule ^sign-in\.html$ sign_in.php [L]
 # RewriteRule ^sign-out$ sign_out.php [L]
 RewriteRule ^home$ media.php?page=home [L]
 RewriteRule ^profil-siswa$ media.php?page=profil-siswa [L]
+RewriteRule ^update-profil$ update_profil.php [L]
 RewriteRule ^unggah$ media.php?page=unggah [L]
 RewriteRule ^mapel$ media.php?page=mapel [L]
 RewriteRule ^nilai-rapor$ media.php?page=nilai-rapor [L]
 RewriteRule ^ujian$ media.php?page=ujian [L]
+
 
 Options All -Indexes
 </IfModule>

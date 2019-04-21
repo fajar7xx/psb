@@ -10,7 +10,7 @@ $noregis = $_GET['reg'];
       </div>
       <!-- Card Body -->
       <div class="card-body">
-        <form action="" method="post" action="update_profil.php">
+        <form method="post" action="?page=update-profil">
           <div class="accordion" id="accordionExample">
             <!-- biodata pribada -->
             <div class="card">
@@ -49,11 +49,8 @@ $noregis = $_GET['reg'];
                     <div class="col-sm-4">
                       <select name="jk" id="jk" class="form-control">
                         <option value="">Pilih Jenis Kelamin</option>
-                        <?php if($data['jns_kelamin'] === 'L'): ?>
-                        <option value="L" Selected>Laki - Laki</option>
-                        <?php elseif($data['jns_kelamin'] === "P"): ?>
-                        <option value="P" selected>Perempuan</option>
-                      <?php endif; ?>
+                        <option value="L" <?=$data['jns_kelamin'] == 'L' ? 'selected':'';?>>Laki - Laki</option>
+                        <option value="P" <?=$data['jns_kelamin'] == 'P' ? 'selected':'';?>>Perempuan</option>
                       </select>
                     </div>
                   </div>
@@ -75,7 +72,7 @@ $noregis = $_GET['reg'];
                   <div class="form-group row">
                     <label for="anakke" class="col-sm-2 col-form-label">Anak Ke</label>
                     <div class="col-sm-4">
-                      <input type="number" class="form-control" name="anakke" id="anakke">
+                      <input type="number" class="form-control" name="anakke" id="anakke" maxlength="2" min="1">
                     </div>
                   </div>
 
@@ -101,14 +98,14 @@ $noregis = $_GET['reg'];
                   <div class="form-group row">
                     <label for="tinggibdn" class="col-sm-2 col-form-label">Tinggi Badan (cm)</label>
                     <div class="col-sm-4">
-                      <input type="number" class="form-control" name="tinggibdn" id="tinggibdn">
+                      <input type="number" class="form-control" name="tinggibdn" id="tinggibdn" min="1">
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="beratbdn" class="col-sm-2 col-form-label">Berat Badan (kg)</label>
                     <div class="col-sm-4">
-                      <input type="number" class="form-control" name="beratbdn" id="beratbdn">
+                      <input type="number" class="form-control" name="beratbdn" id="beratbdn" min="1">
                     </div>
                   </div>
 
@@ -142,21 +139,21 @@ $noregis = $_GET['reg'];
                   <div class="form-group row">
                     <label for="kodepos" class="col-sm-2 col-form-label">Kode Pos</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" name="kodepos" id="kodepos">
+                      <input type="text" class="form-control" name="kodepos" id="kodepos" maxlength="5" min="1">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label for="nohp" class="col-sm-2 col-form-label">NO. Hp</label>
                     <div class="col-sm-6">
-                      <input type="tel" class="form-control" name="nohp" id="nohp">
+                      <input type="tel" class="form-control" name="nohp" id="nohp" maxlength="16">
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="notel" class="col-sm-2 col-form-label">No Telp</label>
                     <div class="col-sm-6">
-                      <input type="tel" class="form-control" name="notel" id="notel">
+                      <input type="tel" class="form-control" name="notel" id="notel" maxlength="16">
                     </div>
                   </div>
 
@@ -169,8 +166,12 @@ $noregis = $_GET['reg'];
 
                   <div class="form-group row">
                     <label for="statusrmh" class="col-sm-2 col-form-label">Status Rumah</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="statusrmh" id="statusrmh">
+                    <div class="col-sm-6">
+                     <select name="statusrmh" id="statusrmh" class="form-control">
+                       <option value="">Status Rumah</option>
+                       <option value="Pribadi">Milik Sendiri</option>
+                       <option value="Sewa">Menyewa</option>
+                     </select>
                     </div>
                   </div>
 
@@ -192,7 +193,7 @@ $noregis = $_GET['reg'];
               </div>
             </div>
             <!-- biodata akademik -->
-            <div class="card">
+            <!-- <div class="card">
               <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -267,9 +268,9 @@ $noregis = $_GET['reg'];
 
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- biodata ortu -->
-            <div class="card">
+            <!-- <div class="card">
               <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -350,9 +351,9 @@ $noregis = $_GET['reg'];
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- biodata wali -->
-            <div class="card">
+            <!-- <div class="card">
               <div class="card-header" id="headingFour">
                 <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -406,7 +407,7 @@ $noregis = $_GET['reg'];
 
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="form-group mt-4 float-right">
