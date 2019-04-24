@@ -10,6 +10,16 @@ function noInjetction($data){
 	return $filterSql;
 }
 
+// versi 2
+function noDos($data){
+	global $conn;
+
+	$sql = stripslashes(strip_tags(htmlspecialchars($data, ENT_QUOTES)));
+	$sql = mysqli_real_escape_string($conn, $sql);
+
+	return $sql;
+}
+
 // untuk kebutuhan tabel ujian
 // no ujian USM
 function getNoUjian(){

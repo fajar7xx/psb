@@ -176,7 +176,7 @@ $nama = $data['nm_siswa'];
         <div class="modal-body">Apakah Kamu yakin ingin keluar!.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="sign_out.php">Logout</a>
+          <a class="btn btn-warning" href="sign_out.php">Logout</a>
         </div>
       </div>
     </div>
@@ -191,6 +191,13 @@ $nama = $data['nm_siswa'];
 
   <!-- Custom scripts for all pages-->
   <script src="assets/js/sb-admin-2.min.js"></script>
+
+  <!-- script number -->
+  <script src="../bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+  <script>
+    // format uang
+    $('.angka').mask('#.##0', {reverse:true});
+  </script>
 
   <!-- Page level plugins -->
   <!-- <script src="assets/vendor/chart.js/Chart.min.js"></script> -->
