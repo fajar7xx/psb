@@ -1,0 +1,1 @@
+ini pengganti folder cfg yang ada pada sistem yang ingin ditiru
