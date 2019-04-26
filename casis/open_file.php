@@ -33,6 +33,12 @@ switch($page){
 	include "pages/unggah/unggah_dok.php";
 	break;
 
+	// unggah dokumen kk
+	case 'unggahkk';
+	if(!file_exists("pages/unggah/unggah_kk.php"))die("File tidak ditemukan");
+	include "pages/unggah/unggah_kk.php";
+	break;	
+
 	// mapel
 	case 'mapel';
 	if(!file_exists("pages/mapel/tambah_mapel.php"))die("file tidak ditemukan");

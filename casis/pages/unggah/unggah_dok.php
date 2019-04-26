@@ -54,14 +54,17 @@ $dir_foto = 'img/img_foto';
                   
                 </div>
                 <div class="card-footer">
-                  <form action="" method="post" enctype="multipart/form-data">
-                    <div class="form-group mb-0">
-                      <input type="file" name="kk" class="form-control-file">
-                      <!-- <a href="#" class="btn btn-secondary">Add File</a> -->
-                      <!-- <a href="#" class="btn btn-sm btn-block btn-primary">Upload</a> -->
-                      <button type="submit" name="simpan_kk" class="btn btn-sm btn-block btn-primary">Upload</button>
-                    </div>
-                  </form>
+                  <?php  
+                  if(!empty($kk)):
+                  ?>
+                    <a href="#" class="btn btn-primary btn-block">Edit</a>
+                  <?php  
+                  else:
+                  ?>
+                    <a href="unggahkk" class="btn btn-success btn-block">Unggah</a>
+                  <?php  
+                  endif;
+                  ?>
                 </div>
               </div>
             </div>

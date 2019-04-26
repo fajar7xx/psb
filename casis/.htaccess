@@ -10,6 +10,7 @@ RewriteRule ^unggah$ media.php?page=unggah [L]
 RewriteRule ^mapel$ media.php?page=mapel [L]
 RewriteRule ^nilai-rapor$ media.php?page=nilai-rapor [L]
 RewriteRule ^ujian$ media.php?page=ujian [L]
+RewriteRule ^unggahkk media.php?page=unggahkk [L]
 
 
 Options All -Indexes
