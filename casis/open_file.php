@@ -39,6 +39,11 @@ switch($page){
 	include "pages/unggah/unggah_kk.php";
 	break;	
 
+	case 'simpankk';
+	if(!file_exists("pages/unggah/aksi/simpan-kk.php"))die("File tidak ditemukan");
+	include "pages/unggah/aksi/simpan-kk.php";
+	break;
+
 	// mapel
 	case 'mapel';
 	if(!file_exists("pages/mapel/tambah_mapel.php"))die("file tidak ditemukan");

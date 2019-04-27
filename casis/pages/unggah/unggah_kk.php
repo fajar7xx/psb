@@ -1,12 +1,25 @@
+<script type="text/javascript">
+	function validasi(){
+		var img_kk = (form1.dok_kk.value);
+		if(img_kk == ""){
+			alert("Pilih file dokumen kartu keluarga.");
+			document.form1.dok_kk.focus();
+			return false;
+		}
+	}
+</script>
+
 <div class="card">
 	<div class="card-header">
 		<h6>Upload Kartu Keluarga</h6>
 	</div>
 	<div class="card-body">
-		<form action="unggah/aksi/simpan-kk.php" method="post" enctype="multipart/form-data">
+		<form action="media.php?page=simpankk" method="post" enctype="multipart/form-data" onsubmit="return validasi()" name="form1">
 			<div class="form-group">
-				<input type="file" name="kk" class="form-control-file">
+				<label for="dok_kk"></label>
+				<input type="file" name="dok_kk" id="dok_kk" class="form-control-file">
 			</div>
+
 			<div class="form-group">
 				<a href="unggah" class="btn btn-warning">Batal</a>
 				<button type="submit" name="simpan" class="btn btn-primary">Upload</button>
