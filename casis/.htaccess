@@ -11,7 +11,8 @@ RewriteRule ^mapel$ media.php?page=mapel [L]
 RewriteRule ^nilai-rapor$ media.php?page=nilai-rapor [L]
 RewriteRule ^ujian$ media.php?page=ujian [L]
 RewriteRule ^unggahkk media.php?page=unggahkk [L]
-
+RewriteRule ^unggahijazah media.php?page=unggahijazah [L]
+RewriteRule ^unggahfoto media.php?page=unggahfoto [L]
 
 Options All -Indexes
 </IfModule>

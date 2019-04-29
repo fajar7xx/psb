@@ -13,18 +13,18 @@ if(isset($_POST['simpan'])){
 	// $tipeFile = $_FILES['dok_kk']['type'];
 	
 	// $path = base_url("img/img_kk/");
-	$path = $_SERVER['DOCUMENT_ROOT'].'/psb/img/img_kk/';
+	$path = $_SERVER['DOCUMENT_ROOT'].'/psb/img/img_foto/';
 	$namaFile = upload($path);
-	$namaFile = 'img/img_kk/'.$namaFile;
+	$namaFile = 'img/img_foto/'.$namaFile;
 
 	// echo $namaFile;
 	$tgl = date("y-m-d");
 
-	$query_simpan_kk = "INSERT INTO dok_kk(no_reg, tgl_up_kk, pic_dok_kk)VALUES('$noreg', '$tgl', '$namaFile')";
-	$sql_simpan_kk = mysqli_query($conn, $query_simpan_kk)or die(mysqli_error($conn));
+	$query_simpan_foto = "INSERT INTO dok_foto(no_reg, tgl_up_foto, pic_foto)VALUES('$noreg', '$tgl', '$namaFile')";
+	$sql_simpan_foto = mysqli_query($conn, $query_simpan_foto)or die(mysqli_error($conn));
 
-	if($sql_simpan_kk){
-		echo "<script>alert('Image Ijazah siswa telah di update.');</script>";
+	if($sql_simpan_foto){
+		echo "<script>alert('foto siswa telah di update.');</script>";
 		echo "<meta http-equiv='refresh' content='0;url=unggah'>";
 	}
 

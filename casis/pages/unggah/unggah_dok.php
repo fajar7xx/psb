@@ -43,7 +43,7 @@ $dir_foto = 'img/img_foto';
                   <?php  
                   if(!empty($kk)):
                   ?>
-                    ada file nya
+                    <img src="<?=base_url($kk);?>" class="img-fluid">
                   <?php  
                   else:
                   ?>
@@ -74,11 +74,30 @@ $dir_foto = 'img/img_foto';
                   <h6>Dokumen Ijazah/SKHUN/SKL</h6>
                 </div>
                 <div class="card-body">
-                  <img src="<?=base_url('img/no-image.jpg');?>" class="img-fluid">
+                  <?php  
+                  if(!empty($ijazah)):
+                  ?>
+                    <img src="<?=base_url($ijazah);?>" class="img-fluid">
+                  <?php  
+                  else:
+                  ?>
+                    <img src="<?=base_url('img/no-image.jpg');?>" class="img-fluid">
+                  <?php  
+                  endif;
+                  ?>
                 </div>
                 <div class="card-footer">
-                  <a href="#" class="btn btn-secondary">Add File</a>
-                  <a href="#" class="btn btn-primary">Upload</a>
+                  <?php  
+                  if(!empty($ijazah)):
+                  ?>
+                    <a href="#" class="btn btn-primary btn-block">Edit</a>
+                  <?php  
+                  else:
+                  ?>
+                    <a href="unggahijazah" class="btn btn-success btn-block">Unggah</a>
+                  <?php  
+                  endif;
+                  ?>
                 </div>
               </div>
             </div>
@@ -88,11 +107,30 @@ $dir_foto = 'img/img_foto';
                   <h6>Dokumen Photo</h6>
                 </div>
                 <div class="card-body">
-                  <img src="<?=base_url('img/user.png');?>" class="img-fluid">
+                  <?php  
+                  if(!empty($foto)):
+                  ?>
+                    <img src="<?=base_url($foto);?>" class="img-fluid">
+                  <?php  
+                  else:
+                  ?>
+                    <img src="<?=base_url('img/user.png');?>" class="img-fluid">
+                  <?php  
+                  endif;
+                  ?>
                 </div>
                 <div class="card-footer">
-                  <a href="#" class="btn btn-secondary">Add File</a>
-                  <a href="#" class="btn btn-primary">Upload</a>
+                  <?php  
+                  if(!empty($foto)):
+                  ?>
+                    <a href="#" class="btn btn-primary btn-block">Edit</a>
+                  <?php  
+                  else:
+                  ?>
+                    <a href="unggahfoto" class="btn btn-success btn-block">Unggah</a>
+                  <?php  
+                  endif;
+                  ?>
                 </div>
               </div>
             </div>

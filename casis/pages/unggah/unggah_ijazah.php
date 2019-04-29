@@ -11,13 +11,13 @@
 
 <div class="card">
 	<div class="card-header">
-		<h6>Upload Kartu Keluarga</h6>
+		<h6>Upload Ijazah</h6>
 	</div>
 	<div class="card-body">
-		<form action="media.php?page=simpankk" method="post" enctype="multipart/form-data" onsubmit="return validasi()" name="form1">
+		<form action="media.php?page=simpanijazah" method="post" enctype="multipart/form-data" onsubmit="return validasi()" name="form1">
 			<div class="form-group">
-				<label for="dok_kk"></label>
-				<input type="file" name="gambar" id="dok_kk" class="form-control-file">
+				<label for="ijazah"></label>
+				<input type="file" name="gambar" id="ijazah" class="form-control-file">
 			</div>
 
 			<div class="form-group">
