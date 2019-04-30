@@ -31,4 +31,23 @@ if(isset($_POST['simpan'])){
 
 }
 
+if(isset($_POST['edit'])){
+	$id = $_POST['id'];
+
+	$path = $_SERVER['DOCUMENT_ROOT'].'/psb/img/img_ijazah/';
+	$namaFile = upload($path);
+	$namaFile = 'img/img_ijazah/'.$namaFile;
+
+	// echo $namaFile;
+	$tgl = date("y-m-d");
+
+	$qe_ijz = "UPDATE dok_ijazah set tgl_up_ijazah = '$tgl', pic_dok_ijazah = '$namaFile' WHERE id_dok_ijazah = '$id'";
+	$se_ijz = mysqli_query($conn, $qe_ijz)or die(mysqli_error($conn));
+
+	if($se_ijz){
+		echo "<script>alert('Image Ijazah siswa telah di update.');</script>";
+		echo "<meta http-equiv='refresh' content='0;url=unggah'>";
+	}
+}
+
 ?>

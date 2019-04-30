@@ -57,7 +57,7 @@ $dir_foto = 'img/img_foto';
                   <?php  
                   if(!empty($kk)):
                   ?>
-                    <a href="#" class="btn btn-primary btn-block">Edit</a>
+                    <a href="media.php?page=editkk&id=<?=$data_kk['id_dok_kk'];?>" class="btn btn-primary btn-block">Edit</a>
                   <?php  
                   else:
                   ?>
@@ -90,7 +90,7 @@ $dir_foto = 'img/img_foto';
                   <?php  
                   if(!empty($ijazah)):
                   ?>
-                    <a href="#" class="btn btn-primary btn-block">Edit</a>
+                    <a href="media.php?page=editijz&id=<?=$data_ijazah['id_dok_ijazah'];?>" class="btn btn-primary btn-block">Edit</a>
                   <?php  
                   else:
                   ?>
@@ -123,7 +123,7 @@ $dir_foto = 'img/img_foto';
                   <?php  
                   if(!empty($foto)):
                   ?>
-                    <a href="#" class="btn btn-primary btn-block">Edit</a>
+                    <a href="media.php?page=editfoto&id=<?=$data_foto['id_dok_foto'];?>" class="btn btn-primary btn-block">Edit</a>
                   <?php  
                   else:
                   ?>

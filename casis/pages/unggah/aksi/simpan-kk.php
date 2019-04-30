@@ -31,4 +31,23 @@ if(isset($_POST['simpan'])){
 
 }
 
+if(isset($_POST['edit'])){
+	$id = $_POST['id'];
+	// print_r($_FILES);
+	$path = $_SERVER['DOCUMENT_ROOT'].'/psb/img/img_kk/';
+	$namaFile = upload($path);
+	$namaFile = 'img/img_kk/'.$namaFile;
+
+	// echo $namaFile;
+	$tgl = date("y-m-d");
+
+	$qe_kk = "UPDATE dok_kk set tgl_up_kk = '$tgl', pic_dok_kk = '$namaFile' WHERE id_dok_kk = '$id'";
+	$se_kk = mysqli_query($conn, $qe_kk)or die(mysqli_error($conn));
+
+	if($se_kk){
+		echo "<script>alert('Image Kartu keluarga siswa telah di update.');</script>";
+		echo "<meta http-equiv='refresh' content='0;url=unggah'>";
+	}
+}
+
 ?>

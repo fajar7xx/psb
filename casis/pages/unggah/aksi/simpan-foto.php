@@ -31,4 +31,23 @@ if(isset($_POST['simpan'])){
 
 }
 
+if(isset($_POST['edit'])){
+	$id = $_POST['id'];
+
+	$path = $_SERVER['DOCUMENT_ROOT'].'/psb/img/img_foto/';
+	$namaFile = upload($path);
+	$namaFile = 'img/img_foto/'.$namaFile;
+
+	// echo $namaFile;
+	$tgl = date("y-m-d");
+
+	$qe_ft = "UPDATE dok_foto set tgl_up_foto = '$tgl', pic_foto = '$namaFile' WHERE id_dok_foto = '$id'";
+	$se_ft = mysqli_query($conn, $qe_ft)or die(mysqli_error($conn));
+
+	if($se_ft){
+		echo "<script>alert('Photo siswa telah di perbaharui.');</script>";
+		echo "<meta http-equiv='refresh' content='0;url=unggah'>";
+	}
+}
+
 ?>

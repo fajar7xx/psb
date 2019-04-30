@@ -44,6 +44,11 @@ switch($page){
 	include "pages/unggah/aksi/simpan-kk.php";
 	break;
 
+	case 'editkk':
+	if(!file_exists("pages/unggah/edit_kk.php"))die("file tidak ditemukan");
+	include "pages/unggah/edit_kk.php";
+	break;
+
 	case 'unggahijazah':
 	if(!file_exists("pages/unggah/unggah_ijazah.php"))die("File tidak ditemukan");
 	include "pages/unggah/unggah_ijazah.php";
@@ -54,6 +59,11 @@ switch($page){
 	include "pages/unggah/aksi/simpan-ijazah.php";
 	break;
 
+	case 'editijz':
+	if(!file_exists("pages/unggah/edit_ijazah.php"))die("File tidak ditemukan");
+	include "pages/unggah/edit_ijazah.php";
+	break;
+
 	case 'unggahfoto':
 	if(!file_exists("pages/unggah/unggah_foto.php"))die("File tidak ditemukan");
 	include "pages/unggah/unggah_foto.php";
@@ -62,6 +72,11 @@ switch($page){
 	case 'simpanfoto':
 	if(!file_exists("pages/unggah/aksi/simpan-foto.php"))die("File tidak ditemukan");
 	include "pages/unggah/aksi/simpan-foto.php";
+	break;
+
+	case 'editfoto';
+	if(!file_exists("pages/unggah/edit_foto.php"))die("File tidak ditemukan");
+	include "pages/unggah/edit_foto.php";
 	break;
 
 	// mapel
