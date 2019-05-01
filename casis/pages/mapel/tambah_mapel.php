@@ -1,3 +1,16 @@
+<script type="text/javascript">
+  // validasi form
+  function validasi(){
+    var mapel = (form1.mapel.value);
+    if(mapel == 0){
+      alert("Silahkan Pilih Mata Pelajaran Terlebih Dahulu.");
+      document.form1.mapel.focus();
+      return false;
+    }
+  }
+</script>
+
+
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12">
     <div class="card shadow mb-4">
@@ -7,12 +20,24 @@
       </div>
       <!-- Card Body -->
       <div class="card-body">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="alert alert-warning" role="alert">
+          Input mata pelajaran untuk selanjutnya menginputkan nilai rapot dari masing-masing mata pelajaran yang tersedia. <br>
+          Untuk masing-masing mata pelajaran yang sudah dipilih, akan langsung ditampilkan pada <b>Menu Input Nilai Rapor</b>
+        </div>
+        <form method="post" action="" role="form1" name="form1" onsubmit="return validasi()">
+          <div class="form-group">
+            <select class="form-control" name="mapel">
+              <option value="0" selected>Silahkan Pilih Mata Pelajaran</option>
+              <option value="1">Mapel 1</option>
+              <option value="2">Mapel 2</option>
+              <option value="3">Mapel 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <a href="home" class="btn btn-warning">Batal</a>
+            <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
