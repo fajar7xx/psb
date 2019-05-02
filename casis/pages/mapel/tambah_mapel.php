@@ -24,13 +24,19 @@
           Input mata pelajaran untuk selanjutnya menginputkan nilai rapot dari masing-masing mata pelajaran yang tersedia. <br>
           Untuk masing-masing mata pelajaran yang sudah dipilih, akan langsung ditampilkan pada <b>Menu Input Nilai Rapor</b>
         </div>
-        <form method="post" action="" role="form1" name="form1" onsubmit="return validasi()">
+        <form method="post" action="media.php?page=simpanmapel" role="form1" name="form1" onsubmit="return validasi()">
           <div class="form-group">
             <select class="form-control" name="mapel">
               <option value="0" selected>Silahkan Pilih Mata Pelajaran</option>
-              <option value="1">Mapel 1</option>
-              <option value="2">Mapel 2</option>
-              <option value="3">Mapel 3</option>
+              <?php
+              $qMapel = "SELECT * FROM mapel WHERE aktif_mapel = 'Y' ORDER BY id_mapel";
+              $sMapel = mysqli_query($conn, $qMapel)or die(mysqli_error($conn));
+              while($data = mysqli_fetch_assoc($sMapel)):
+              ?>
+              <option value="<?=$data['id_mapel'];?>"><?=$data['mapel'];?></option>
+              <?php  
+              endwhile;
+              ?>
             </select>
           </div>
           <div class="form-group">

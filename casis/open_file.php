@@ -85,6 +85,11 @@ switch($page){
 	include "pages/mapel/tambah_mapel.php";
 	break;
 
+	case 'simpanmapel':
+	if(!file_exists("pages/mapel/simpan_mapel.php"))die("File tidak ditemukan");
+	include "pages/mapel/simpan_mapel.php";
+	break;
+
 	// nilai rapor
 	case 'nilai-rapor':
 	if(!file_exists("pages/nilai/nilai_rapor.php"))die("File tidak ditemukan");
