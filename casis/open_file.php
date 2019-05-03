@@ -96,6 +96,11 @@ switch($page){
 	include "pages/nilai/nilai_rapor.php";
 	break;
 
+	case 'simpan-nilai':
+	if(!file_exists("pages/nilai/simpan_nilai.php"))die("File tidak ditemukan");
+	include "pages/nilai/simpan_nilai.php";
+	break;
+
 	// ujian
 	case 'ujian':
 	if(!file_exists("pages/ujian/ujian.php"))die("file tidak ditemukan");

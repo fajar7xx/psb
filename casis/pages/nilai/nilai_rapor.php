@@ -19,7 +19,7 @@
             apabila terjadi kesalahan dalam penginputan nilai, segera lakukan perubahaqn nilai.
         </div>
 
-        <form action="" method="post">
+        <form action="simpan-nilai" method="post">
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -50,27 +50,27 @@
               
               while($data = mysqli_fetch_assoc($sql_mapel)):
               ?>
-                <input type="hidden" name="idmapel[]" value="<?=$data['mapel'];?>">
+                <input type="hidden" name="idmapel[]" value="<?=$data['id_mapel'];?>">
                 <tr>
                   <td class="text-center"><?=$no++;?></td>
                   <td class="text-center"><?=$data['mapel'];?></td>
                   <td>
-                    <input type="text" class="form-control">
+                    <input type="number" min="0" max="100" step="any" class="form-control" name="nil1[]" value="<?=$data['nil1'];?>">
                   </td>
                   <td>
-                    <input type="text" class="form-control">
+                    <input type="number" min="0" max="100" step="any" class="form-control" name="nil2[]" value="<?=$data['nil2'];?>">
                   </td>
                   <td>
-                    <input type="text" class="form-control">
+                    <input type="number" min="0" max="100" step="any" class="form-control" name="nil3[]" value="<?=$data['nil3'];?>">
                   </td>
                   <td>
-                    <input type="text" class="form-control">
+                    <input type="number" min="0" max="100" step="any" class="form-control" name="nil4[]" value="<?=$data['nil4'];?>">
                   </td>
                   <td>
-                    <input type="text" class="form-control">
+                    <input type="number" min="0" max="100" step="any" class="form-control" name="nil5[]" value="<?=$data['nil5'];?>">
                   </td>
-                  <td>
-                    <input type="text" class="form-control">
+                  <td class="text-center font-weight-bold">
+                    <?=$data['nil_ratarata'];?>
                   </td>
                 </tr>
               <?php  
@@ -78,6 +78,10 @@
               ?>
             </tbody>
           </table>
+          <div class="form-group">
+            <a href="mapel" class="btn btn-warning">Kembali Ke Mata Pelajaran</a>
+            <button type="submit" name="simpan" class="btn btn-primary float-right">Simpan</button>
+          </div>
         </form>
       </div>
     </div>
