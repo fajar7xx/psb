@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^kpusm$ kpusm.php [L]
+
+Options All -Indexes
+</IfModule>
