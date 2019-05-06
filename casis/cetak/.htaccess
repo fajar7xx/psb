@@ -2,6 +2,7 @@
 RewriteEngine on
 
 RewriteRule ^kpusm$ kpusm.php [L]
+RewriteRule ^cetakusm$ cetak_usm.php [L]
 
 Options All -Indexes
 </IfModule>

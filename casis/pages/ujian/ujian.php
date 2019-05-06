@@ -38,10 +38,10 @@
               if($usm['ket_ujian'] == 'Lulus'):
               ?>
 
-                <div class="alert alert-primary" role="alert">
+                <div class="alert alert-secondary" role="alert">
                  <strong>Selamat, Kamu Lulus</strong>
                   <p>Kamu Diterima Di SMK Medan sebagai Siswa/i Tahun Ajaran Baru</p>
-                  <p>NIS kamu adalah <?=$usm['nis'];?></p>
+                  <p>NIS kamu adalah <b><?=$usm['nis'];?></b></p>
                 </div>
 
               <?php
@@ -89,7 +89,7 @@
                   <?php  
                   if($usm['jam_ujian'] != '00:00:00' AND $usm['ruang_ujian'] != ''):
                   ?>
-                    <a href="cetak/kpusm" target="blank" class="btn btn-success btn-block">Cetak kartu Peserta Ujian</a>
+                    <a href="#" target="blank" class="btn btn-success btn-block" onclick="window.open('<?=base_url('casis/cetak/kpusm.php');?>', 'Judul Cetak', 'width=600, heigth=800').print()">Cetak kartu Peserta Ujian</a>
                   <?php  
                   else:
                   ?>

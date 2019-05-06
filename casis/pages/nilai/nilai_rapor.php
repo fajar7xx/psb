@@ -80,7 +80,7 @@
           </table>
           <div class="form-group">
             <a href="mapel" class="btn btn-warning">Kembali Ke Mata Pelajaran</a>
-            <button type="submit" name="simpan" class="btn btn-primary float-right">Simpan</button>
+            <button type="submit" name="simpan" class="btn btn-primary float-right" onclick=" return confirm('Apakah Anda yakin, Nilai yang anda masukkan sudah benar?')">Simpan</button>
           </div>
         </form>
       </div>
