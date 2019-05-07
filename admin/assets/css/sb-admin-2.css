@@ -11589,7 +11589,7 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("../img/school32.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -11601,7 +11601,7 @@ a:focus {
 }
 
 .bg-password-image {
-  background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800");
+  background: url("../img/school32.jpg");
   background-position: center;
   background-size: cover;
 }

@@ -22,9 +22,19 @@ file yang sudah di kerjakan:
   ✔ tentang_kami @done (19-04-14 23:03)
   ✔ perbaikan pada data profil calon siswa @done (19-05-05 23:12)
   ☐ modul cetak biodata siswa
-  ☐ modul cetak kartu ujian siswa lihat pada buku laman 75
+  ✔ modul cetak kartu ujian siswa lihat pada buku laman 75 @done (19-05-06 09:14)
+  ☐ validasi inputan
+  ☐ error handling
 
 
+
+admin section:
+  ☐ login modul
+  ☐ forgot password
+  ☐ dashboard
+  ☐ register user baru via admin
+  ☐ penguna (user dan admin)
+  ✔ autentikasi admin menggunakan session sederhana @done (19-05-07 13:55)
 
 setelah registrasi berhasil akan muncul pesan nah opesan itu nnti menampilkan semacam page yang berisi informasi
 nisn
@@ -35,3 +45,4 @@ kode aktifasi
 
 lalu di redirect ke page aktifasi
 atau jika mereka lupa pas login jika belom aktifasi akan redirect ke page aktifasi
+untuk modul cetak kartu ujian masih sangat sederhana kedepannya akan terus di kembangkan lagi

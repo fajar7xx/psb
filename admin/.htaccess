@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^login$ login.php [L]
+RewriteRule ^forgot$ forgot-password.php [L]
+RewriteRule ^dashboard$ media.php?page=dashboard [L]
+RewriteRule ^identitas$ media.php?page=identitas [L]
+
+
+Options All -Indexes
+</IfModule>
