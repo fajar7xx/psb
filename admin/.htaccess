@@ -5,7 +5,9 @@ RewriteRule ^login$ login.php [L]
 RewriteRule ^forgot$ forgot-password.php [L]
 RewriteRule ^dashboard$ media.php?page=dashboard [L]
 RewriteRule ^identitas$ media.php?page=identitas [L]
-
+RewriteRule ^cara-pendaftaran$ media.php?page=cara-pendaftaran [L]
+RewriteRule ^informasi-psb$ media.php?page=informasi-psb [L]
+RewriteRule ^psb$ media.php?page=psb [L]
 
 Options All -Indexes
 </IfModule>

@@ -4,6 +4,9 @@ require_once '../functions/base_url.php';
 require_once 'autentikasi.php';
 require_once '../functions/query.php';
 
+$username = $_SESSION['user']['username'];
+$admin = query("SELECT * FROM admin WHERE username = '$username'");
+
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +70,8 @@ require_once '../functions/query.php';
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Website Settings:</h6>
             <a class="collapse-item" href="identitas">Identitas Website</a>
-            <a class="collapse-item" href="#">Cara Pendaftaran</a>
-            <a class="collapse-item" href="#">Informasi PSB</a>
+            <a class="collapse-item" href="cara-pendaftaran">Cara Pendaftaran</a>
+            <a class="collapse-item" href="informasi-psb">Informasi PSB</a>
           </div>
         </div>
       </li>
@@ -81,7 +84,7 @@ require_once '../functions/query.php';
         <div id="collapseManajemen" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manajemen Settings:</h6>
-            <a class="collapse-item" href="#">Penerimaan Siswa Baru</a>
+            <a class="collapse-item" href="psb">Penerimaan Siswa Baru</a>
             <a class="collapse-item" href="#">Nilai Raport Siswa</a>
             <a class="collapse-item" href="#">Ujian Saringan Masuk</a>
           </div>
@@ -102,56 +105,7 @@ require_once '../functions/query.php';
           </div>
         </div>
       </li>
-      <!-- Heading -->
-      <!-- <div class="sidebar-heading">
-        Sudah Oke
-      </div> -->
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-users"></i>
-          <span>Jumlah PSB</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="far fa-check-square"></i>
-          <span>Verifikasi</span></a>
-      </li> -->
       
-
-      <!-- Divider -->
-      <!-- <hr class="sidebar-divider"> -->
-
-      <!-- Heading -->
-      <!-- <div class="sidebar-heading">
-        Belum Oke
-      </div> -->
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-file"></i>
-          <span>Jumlah USM</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-exclamation-circle"></i>
-          <span>Belum Ujian</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-exclamation-circle"></i>
-          <span>Lulus Ujian</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-exclamation-circle"></i>
-          <span>Tidak Lulus</span></a>
-      </li>
-
-      <hr class="sidebar-divider"> -->
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSettings" aria-expanded="true" aria-controls="collapseSettings">
           <i class="fas fa-cogs"></i>
@@ -182,13 +136,6 @@ require_once '../functions/query.php';
           </div>
         </div>
       </li>
-
-      <!-- Nav Item - Tables -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Logout</span></a>
-      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -228,8 +175,8 @@ require_once '../functions/query.php';
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$admin['nm_lengkap'];?></span>
+                <img class="img-profile rounded-circle" src="<?=base_url($admin['pic_admin']);?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -325,6 +272,7 @@ require_once '../functions/query.php';
   
   <script>
     CKEDITOR.replace( 'profil' );
+    CKEDITOR.replace( 'deskripsi1' );
   </script>
 </body>
 

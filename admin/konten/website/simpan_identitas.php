@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
 	$facebook = noDos($_POST['facebook']);
 	$twitter = noDos($_POST['twitter']);
 	$instagram = noDos($_POST['instagram']);
-	$profil = noDos($_POST['profil']);
+	$profil = trim(mysqli_real_escape_string($conn, $_POST['profil'] ));
 	$deskripsi = noDos($_POST['deskripsi']);
 	$keyword = noDos($_POST['keyword']);
 
