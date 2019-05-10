@@ -322,28 +322,6 @@ $noregis = $_GET['reg'];
                       <input type="text" class="form-control angka" name="peng_ibu" id="peng_ibu" value="<?=$data['penghasilan_ibu'];?>">
                     </div>
                   </div>
-
-                  <!-- <div class="form-group row">
-                    <label for="alamat_ortu" class="col-sm-2 col-form-label">Alamat Orang tua</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="alamat_ortu" id="alamat_ortu">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="kota_ortu" class="col-sm-2 col-form-label">KoTA/ KAB ORANG TUAde Pos Orang tua</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="kota_ortu" id="kota_ortu">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="kodepos_ortu" class="col-sm-2 col-form-label">Koode pos orang tua</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="kodepos_ortu" id="kodepos_ortu">
-                    </div>
-                  </div> -->
-
                   <div class="form-group row">
                     <label for="hp_ortu" class="col-sm-2 col-form-label">No hp orang tua</label>
                     <div class="col-sm-10">

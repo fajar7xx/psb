@@ -3,6 +3,7 @@ require_once '../config/koneksi.php';
 require_once '../functions/base_url.php';
 require_once 'autentikasi.php';
 require_once '../functions/query.php';
+require '../functions/active_css.php';
 
 $username = $_SESSION['user']['username'];
 $admin = query("SELECT * FROM admin WHERE username = '$username'");
@@ -30,6 +31,9 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
   <link href="<?=base_url();?>/admin/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
   <script src="<?=base_url('bower_components/ckeditor/ckeditor.js');?>"></script>
+
+  <!-- datatable -->
+  <link href="<?=base_url('bower_components/datatables/media/css/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -273,6 +277,24 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
   <script>
     CKEDITOR.replace( 'profil' );
     CKEDITOR.replace( 'deskripsi1' );
+  </script>
+
+  <!-- datatable -->
+  <script src="<?=base_url('bower_components/datatables/media/js/jquery.dataTables.min.js');?>"></script>
+  <script src="<?=base_url('bower_components/datatables/media/js/dataTables.bootstrap4.min.js');?>"></script>
+  <script>
+    $(document).ready(function() {
+      $('#psb').DataTable({
+        "ordering" : false
+      });
+    } );
+  </script> 
+
+  <!-- matuang? -->
+ <script src="<?=base_url('bower_components/jquery-mask-plugin/dist/jquery.mask.min.js');?>"></script>
+  <script>
+    // format uang
+    $('.angka').mask('#.##0', {reverse:true});
   </script>
 </body>
 

@@ -27,6 +27,11 @@ switch ($page){
 	if(!file_exists("konten/psb/psb.php"))die("file tidak ditemukan");
 	include "konten/psb/psb.php";
 	break;
+
+	case 'detail-psb':
+	if(!file_exists("konten/psb/detail_psb.php"))die("File tidak ditemukan");
+	include "konten/psb/detail_psb.php";
+	break;
 }
 
 ?>

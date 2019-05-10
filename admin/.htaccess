@@ -8,6 +8,7 @@ RewriteRule ^identitas$ media.php?page=identitas [L]
 RewriteRule ^cara-pendaftaran$ media.php?page=cara-pendaftaran [L]
 RewriteRule ^informasi-psb$ media.php?page=informasi-psb [L]
 RewriteRule ^psb$ media.php?page=psb [L]
+RewriteRule ^detail-psb$ media.php?page=detail-psb [L]
 
 Options All -Indexes
 </IfModule>

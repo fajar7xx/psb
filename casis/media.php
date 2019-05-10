@@ -195,7 +195,7 @@ $nama = $data['nm_siswa'];
   <script src="assets/js/sb-admin-2.min.js"></script>
 
   <!-- script number -->
-  <script src="../bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+  <script src="<?=base_url('bower_components/jquery-mask-plugin/dist/jquery.mask.min.js');?>"></script>
   <script>
     // format uang
     $('.angka').mask('#.##0', {reverse:true});
