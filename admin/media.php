@@ -3,7 +3,7 @@ require_once '../config/koneksi.php';
 require_once '../functions/base_url.php';
 require_once 'autentikasi.php';
 require_once '../functions/query.php';
-require '../functions/active_css.php';
+require '../functions/tanggal.php';
 
 $username = $_SESSION['user']['username'];
 $admin = query("SELECT * FROM admin WHERE username = '$username'");
