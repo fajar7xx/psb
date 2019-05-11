@@ -46,3 +46,15 @@ kode aktifasi
 lalu di redirect ke page aktifasi
 atau jika mereka lupa pas login jika belom aktifasi akan redirect ke page aktifasi
 untuk modul cetak kartu ujian masih sangat sederhana kedepannya akan terus di kembangkan lagi
+
+untuk permasalahan install phpspreadsheet ini l;ink nya
+https://stackoverflow.com/questions/48240726/composer-require-phpoffice-phpspreadsheet-doesnt-work
+
+instal ini sesuai versi php kalian ya 
+sudo apt install php-xml
+
+sudo apt install php7.0-gd
+
+sudo apt install php7.0-mbstring
+
+sudo apt install php-zip

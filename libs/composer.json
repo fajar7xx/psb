@@ -1,6 +1,7 @@
 {
     "require": {
         "spipu/html2pdf": "^5.2",
-        "ramsey/uuid": "^3.8"
+        "ramsey/uuid": "^3.8",
+        "phpoffice/phpspreadsheet": "^1.6"
     }
 }

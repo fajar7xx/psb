@@ -123,35 +123,127 @@ $data= query("SELECT * FROM psb JOIN kompetensi USING(id_kompetensi) WHERE no_re
                     <td colspan="2" class="h4 text-primary">Asal Sekolah <hr></td>
                   </tr>
                   <tr>
-                    <td>Nama Ayah</td>
-                    <td><?=$data['no_reg'];?></td>
+                    <td>Asal Sekolah</td>
+                    <td><?=$data['asal_sekolah'];?></td>
                   </tr>
                   <tr>
-                    <td>Pekerjaan Ayah</td>
-                    <td><?=tgl_indo($data['tgl_daftar']);?></td>
+                    <td>Alamat Sekolah</td>
+                    <td><?=$data['alamat_sekolah'];?></td>
                   </tr>
                   <tr>
-                    <td>Penghasilan Ayah</td>
-                    <td><?=tgl_indo($data['tgl_daftar']);?></td>
+                    <td>No Ijazah</td>
+                    <td><?=$data['no_ijazah'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Tanggal Ijazah</td>
+                    <td><?=$data['tgl_ijazah'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Tahun Ijazah</td>
+                    <td><?=$data['thn_ijazah'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Nilai UN</td>
+                    <td><?=$data['nilai_un'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Prestasi Akademik</td>
+                    <td><?=$data['prestasi_akademik'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Prestasi Olahraga</td>
+                    <td><?=$data['prestasi_olahraga'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Prestasi Kesenian</td>
+                    <td><?=$data['prestasi_kesenian'];?></td>
                   </tr>
                   <tr>
                     <td colspan="2" class="h4 text-primary">Biodata Orang Tua <hr></td>
                   </tr>
                   <tr>
                     <td>Nama Ayah</td>
-                    <td><?=$data['no_reg'];?></td>
+                    <td><?=$data['nm_orangtua_ayah'];?></td>
                   </tr>
                   <tr>
                     <td>Pekerjaan Ayah</td>
-                    <td><?=tgl_indo($data['tgl_daftar']);?></td>
+                    <td><?=$data['pekerjaan_ayah'];?></td>
                   </tr>
                   <tr>
                     <td>Penghasilan Ayah</td>
-                    <td><?=tgl_indo($data['tgl_daftar']);?></td>
+                    <td><?=$data['penghasilan_ayah'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Nama Ibu</td>
+                    <td><?=$data['nm_orangtua_ibu'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Pekerjaan Ibu</td>
+                    <td><?=$data['pekerjaan_ibu'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Penghasilan Ibu</td>
+                    <td><?=$data['penghasilan_ibu'];?></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="h4 text-primary">Biodata Wali <hr></td>
+                  </tr>
+                  <tr>
+                    <td>Nama wali</td>
+                    <td><?=$data['nm_wali'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Pekerjaan wali</td>
+                    <td><?=$data['pekerjaan_wali'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Penghasilan wali</td>
+                    <td><?=$data['penghasilan_wali'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Alamat wali</td>
+                    <td><?=$data['alamat_wali'];?></td>
+                  </tr>
+                  <tr>
+                    <td>HP wali</td>
+                    <td><?=$data['hp_wali'];?></td>
+                  </tr>
+                  <tr>
+                    <td>Penanggung Jawab</td>
+                    <td><?=$data['penanggung_biaya'];?></td>
                   </tr>
                 </tbody>
               </table>
-            </div>  
+            </div> 
+            <?php  
+            if($data['status_verifikasi'] == 'Sudah'):
+            ?>
+              <a href="dashboard" class="btn btn-success">Kembali</a>
+            <?php  
+            else:
+            ?>
+              <form action="<?=base_url('admin/konten/psb/simpan_psb.php');?>" method="post">
+                <hr>
+                <p>Seilahkan mengubah status verifikasi menjadi Verifikasi apabaila biodatra yang diisini sudah benar dan lengkap</p>
+                <input type="hidden" name="id" value="<?=$data['no_reg'];?>">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label for="verifikasi">Status Verifikasi</label>
+                    <select name="verifikasi" id="verifikasi" class="form-control">
+                      <option value="Belum">Belum</option>
+                      <option value="Sudah">Verifikasi</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="mt-2">
+                  <a href="psb" class="btn btn-warning">Batal</a>
+                  <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                </div>
+              </form>
+            <?php  
+            endif;
+            ?>
           </div>
       </div>
     </div>
