@@ -35,6 +35,7 @@ admin section:
   ☐ register user baru via admin
   ☐ penguna (user dan admin)
   ✔ autentikasi admin menggunakan session sederhana @done (19-05-07 13:55)
+  ☐ export data sb ke excel dengan lib phpspreadsheet
 
 setelah registrasi berhasil akan muncul pesan nah opesan itu nnti menampilkan semacam page yang berisi informasi
 nisn

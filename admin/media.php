@@ -56,7 +56,7 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -89,7 +89,7 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manajemen Settings:</h6>
             <a class="collapse-item" href="psb">Penerimaan Siswa Baru</a>
-            <a class="collapse-item" href="#">Nilai Raport Siswa</a>
+            <a class="collapse-item" href="nilai">Nilai Raport Siswa</a>
             <a class="collapse-item" href="#">Ujian Saringan Masuk</a>
           </div>
         </div>
@@ -136,7 +136,7 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Utilities:</h6>
-            <a class="collapse-item" href="#">Backup database</a>
+            <a class="collapse-item" href="backupdb">Backup database</a>
           </div>
         </div>
       </li>

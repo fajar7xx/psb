@@ -32,6 +32,21 @@ switch ($page){
 	if(!file_exists("konten/psb/detail_psb.php"))die("File tidak ditemukan");
 	include "konten/psb/detail_psb.php";
 	break;
+
+	case 'nilai':
+	if(!file_exists("konten/nilai/nilai_tampil.php"))die("File tidak ditemukan");
+	include "konten/nilai/nilai_tampil.php";
+	break;
+
+	case 'detail-nilai':
+	if(!file_exists("konten/nilai/detail_nilai.php"))die("file tidak ditemukan");
+	include "konten/nilai/detail_nilai.php";
+	break;
+
+	case 'backupdb':
+	if(!file_exists("konten/utility/backupdb.php"))die("File tidak di temukan");
+	include "konten/utility/backupdb.php";
+	break;
 }
 
 ?>

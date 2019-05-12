@@ -9,6 +9,11 @@ RewriteRule ^cara-pendaftaran$ media.php?page=cara-pendaftaran [L]
 RewriteRule ^informasi-psb$ media.php?page=informasi-psb [L]
 RewriteRule ^psb$ media.php?page=psb [L]
 RewriteRule ^detail-psb$ media.php?page=detail-psb [L]
+RewriteRule ^nilai$ media.php?page=nilai [L]
+
+
+
+RewriteRule ^backupdb$ media.php?page=backupdb [L]
 
 Options All -Indexes
 </IfModule>
