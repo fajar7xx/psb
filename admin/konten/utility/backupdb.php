@@ -15,7 +15,8 @@
         </div>
         <!-- Card Body -->
         <div class="card-body">
-
+          Backup Database annda secara berkala. silahkan klik tombol backup untuk membuat cadangan databae anda.
+          <button class="btn btn-primary btn-lg" onclick="return confirm('Apakah Anda yakin untuk membuat cadangan database')">Backup database</button>
         </div>
       </div>
     </div>

@@ -90,7 +90,7 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
             <h6 class="collapse-header">Manajemen Settings:</h6>
             <a class="collapse-item" href="psb">Penerimaan Siswa Baru</a>
             <a class="collapse-item" href="nilai">Nilai Raport Siswa</a>
-            <a class="collapse-item" href="#">Ujian Saringan Masuk</a>
+            <a class="collapse-item" href="usm">Ujian Saringan Masuk</a>
           </div>
         </div>
       </li>
@@ -103,9 +103,9 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
         <div id="collapseDokumen" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Dokumen Settings:</h6>
-            <a class="collapse-item" href="#">Kartu Keluarga</a>
-            <a class="collapse-item" href="#">Ijazah/SKHUN/SKL</a>
-            <a class="collapse-item" href="#">Foto</a>
+            <a class="collapse-item" href="kk">Kartu Keluarga</a>
+            <a class="collapse-item" href="ijazah">Ijazah/SKHUN/SKL</a>
+            <a class="collapse-item" href="foto">Foto</a>
           </div>
         </div>
       </li>

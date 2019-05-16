@@ -47,6 +47,41 @@ switch ($page){
 	if(!file_exists("konten/utility/backupdb.php"))die("File tidak di temukan");
 	include "konten/utility/backupdb.php";
 	break;
+
+	case 'kk':
+	if(!file_exists("konten/kk/kk.php"))die("file tidak ditemukan");
+	include "konten/kk/kk.php";
+	break;
+
+	case 'detail-kk':
+	if(!file_exists("konten/kk/detail_kk.php"))die("file tidak ditemukan");
+	include "konten/kk/detail_kk.php";
+	break;
+
+	case 'ijazah':
+	if(!file_exists("konten/ijazah/ijazah.php"))die("file tidak ditemukan");
+	include "konten/ijazah/ijazah.php";
+	break;
+
+	case 'detail-ijazah':
+	if(!file_exists("konten/ijazah/detail_ijazah.php"))die("file tidak ditemukan");
+	include "konten/ijazah/detail_ijazah.php";
+	break;
+
+	case 'foto':
+	if(!file_exists("konten/foto/foto.php"))die("file tidak ditemukan");
+	include "konten/foto/foto.php";
+	break;
+
+	case 'detail-foto':
+	if(!file_exists("konten/foto/detail_foto.php"))die('File tidak ditemukan');
+	include "konten/foto/detail_foto.php";
+	break;
+
+	case 'usm':
+	if(!file_exists("konten/usm/usm.php"))die("file tidak ditemukan");
+	include "konten/usm/usm.php";
+	break;
 }
 
 ?>
