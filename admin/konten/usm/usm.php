@@ -20,9 +20,12 @@
           		<thead>
           			<tr>
           				<th class="text-center">No</th>
-          				<th>No Registrasi</th>
-          				<th>NISN</th>
-          				<th>Nama Siswa</th>
+          				<th>No Ujian</th>
+          				<th>Nama Siswa/i</th>
+          				<th>Tanggal Ujian</th>
+                  <th>Waktu</th>
+                  <th>Ruang</th>
+                  <th>Keterangan</th>
           				<th>Aksi</th>
           			</tr>
           		</thead>
@@ -30,25 +33,28 @@
           			<?php
                 $no = 1;  
                 $query = "SELECT
-                              dok_kk.*,
-                              psb.nm_siswa,
-                              psb.nisn
+                              ujian_masuk.*,
+                              psb.nm_siswa
                           FROM
-                              dok_kk
+                              `ujian_masuk`
                           LEFT JOIN psb USING(no_reg)
                           ORDER BY
-                              no_reg
+                              no_ujian
                           DESC";
                 $sql = mysqli_query($conn, $query)or die("Error: " . mysqli_error($conn));
                 while($data = mysqli_fetch_assoc($sql)):
                 ?>
                   <tr>
                     <td class="text-center"><?=$no++;?></td>
-                    <td><?=$data['no_reg'];?></td>
-                    <td><?=$data['nisn'];?></td>
+                    <td><?=$data['no_ujian'];?></td>
                     <td><?=$data['nm_siswa'];?></td>
+                    <td><?=tgl_indo($data['tgl_ujian']);?></td>
+                    <td><?=$data['jam_ujian'];?></td>
+                    <td><?=$data['ruang_ujian'];?></td>
+                    <td><?=$data['ket_ujian'];?></td>
+
                     <td>
-                      <a href="media.php?page=detail-kk&id=<?=$data['no_reg'];?>" class="btn btn-success btn-sm">
+                      <a href="media.php?page=detail-usm&id=<?=$data['no_ujian'];?>" class="btn btn-success btn-sm">
                         <i class="fas fa-external-link-alt"></i> 
                         Detail
                       </a>

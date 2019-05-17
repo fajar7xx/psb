@@ -82,6 +82,11 @@ switch ($page){
 	if(!file_exists("konten/usm/usm.php"))die("file tidak ditemukan");
 	include "konten/usm/usm.php";
 	break;
+
+	case 'detail-usm':
+	if(!file_exists("konten/usm/detail_usm.php"))die("file tidak ditemukan");
+	include "konten/usm/detail_usm.php";
+	break;
 }
 
 ?>

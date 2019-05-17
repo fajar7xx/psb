@@ -1,8 +1,6 @@
 <?php  
 // ketiak memangl helper wajib menyertakan file koneksi
-// 
-// 
-// 
+
 // anti xss dan sql anti injection
 function noInjetction($data){
 	$filterSql = stripslashes(strip_tags(htmlspecialchars($data, ENT_QUOTES)));
@@ -71,6 +69,40 @@ function getNoReg(){
 
 	return $kd_berikutnya;
 }
+
+// untuk nis siswa
+// PSB
+function getNis($noreg){
+	global $conn;
+
+	$query_psb = "SELECT * FROM psb WHERE no_reg = '$noreg'";
+	$sql_psb = mysqli_query($conn, $query_psb)or die('Error: ' . mysqli_error($conn));
+	$psb = mysqli_fetch_assoc($sql_psb);
+
+	$kompetensi = $psb['id_kompetensi'];
+
+	$sekarang = date("y");
+
+
+
+	$query_nis = "SELECT
+					    MAX(nis) AS terakhir
+					FROM
+					    psb
+					WHERE
+					    nis LIKE '$kompetensi%'";
+	$sql_nis = mysqli_query($conn, $query_nis)or die("error: " . mysqli_error($conn));
+	$nis = mysqli_fetch_assoc($sql_nis);
+
+	$terakhir_nis = $nis['terakhir'];
+	$kd_akhir_nis = substr($terakhir_nis, 5, 4);
+	$tambah_nis = $kd_akhir_nis + 1;
+	$kd_berikutnya = $kompetensi.$sekarang.sprintf('%04s', $tambah_nis);
+
+	return $kd_berikutnya;
+}
+
+
 
 // fungsi menggenerate kode aktifasi ketika di kirim ke email
 function crypto_rand_secure($min, $max)
