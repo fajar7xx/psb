@@ -1,4 +1,6 @@
 <?php
+
+// print_r($_SESSION);
 // require '../functions/query.php';
 $q_jmlpsb = "SELECT count(no_reg) AS jml_psb FROM psb";
 $s_jmlpsb = mysqli_query($conn, $q_jmlpsb)or die("Error : " . mysqli_error($conn));

@@ -74,7 +74,7 @@ elseif($data['ket_ujian'] == "Tidak"){
               <input type="text" name="keterangan" id="keterangan" value="<?=$ket;?>" readonly class="form-control">
             </div>
             <div class="float-right">
-              <?php if($data['ket_ujian'] === "Lulus"): ?>
+              <?php if($data['ket_ujian'] === "Lulus" OR $data['ket_ujian'] == "Tidak"): ?>
                 <a href="usm" class="btn btn-warning">Kembali</a>
               <?php elseif($data['ket_ujian'] === "Belum"): ?>
                 <a href="usm" class="btn btn-warning">Kembali</a>

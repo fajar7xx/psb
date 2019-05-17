@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
 
 	echo "<script>
 			alert('Data ujian saringan masuk siswa baru telah di update.');
-			document.location.href='../../dashboard';
+			document.location.href='../../usm';
 			</script>";
 
 }

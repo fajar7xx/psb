@@ -118,7 +118,9 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
         <div id="collapseSettings" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">All Settings:</h6>
-            <a class="collapse-item" href="#">User Management</a>
+            <?php if($_SESSION['user']['status_admin'] === "Admin"): ?>
+              <a class="collapse-item" href="usman">User Management</a>
+            <?php endif; ?>
             <a class="collapse-item" href="#">Change Password</a>
             <a class="collapse-item" href="#">Profile</a>
             <a class="collapse-item" href="#">Website Settings</a>
