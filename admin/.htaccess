@@ -15,7 +15,7 @@ RewriteRule ^ijazah$ media.php?page=ijazah [l]
 RewriteRule ^foto$ media.php?page=foto [l]
 RewriteRule ^usm$ media.php?page=usm [L]
 RewriteRule ^usman$ media.php?page=usman [L]
-
+RewriteRule ^user-add$ media.php?page=user-add [L]
 
 RewriteRule ^backupdb$ media.php?page=backupdb [L]
 

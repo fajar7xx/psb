@@ -13,7 +13,7 @@
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
           <h6 class="m-0 font-weight-bold text-primary">Data User Management</h6>
           <div class="float-right">
-            <a href="#" class="btn btn-primary">Tambah Pengguna</a>
+            <a href="user-add" class="btn btn-primary">Tambah Pengguna</a>
           </div>
         </div>
         <!-- Card Body -->
@@ -53,9 +53,9 @@
                     <td><?=tgl_indo($data['dt_last_akses']);?></td>
 
                     <td>
-                      <a href="#" class="btn btn-warning btn-sm">Disable</a>
+                      <a href="#" class="btn btn-warning btn-sm" onclick="return confirm('apakah anda ingin menonaktifkan user tersebut')">Disable</a>
+                      <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda ingin mmenghapus user tersebut')">Delete</a>
                       <a href="#>" class="btn btn-success btn-sm">Edit</a>
-                      <a href="#" class="btn btn-danger btn-sm">Delete</a>
                     </td>
                   </tr>
                 <?php  

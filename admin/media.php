@@ -298,6 +298,27 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
     // format uang
     $('.angka').mask('#.##0', {reverse:true});
   </script>
+
+  <!-- file browser fo bs4 -->
+  <script src="<?=base_url('node_modules/bs-custom-file-input/dist/bs-custom-file-input.min.js');?>"></script>
+  <script>
+    $(document).ready(function () {
+      bsCustomFileInput.init()
+    });
+  </script>
+  
+  <!-- show/hide password -->
+  <script src="<?=base_url('bower_components/hideshowpassword/hideShowPassword.min.js');?>"></script>
+  <script>
+    // $('#password1').hideShowPassword(true, true);
+    // $('#password2').hideShowPassword(true, true);
+    // $('#password2').showPassword('focus', {
+    //   toggle: { className: 'my-toggle' }
+    // });
+    // 
+    $('#password2').hidePassword(true);
+    $('#password1').hidePassword(true);
+  </script>
 </body>
 
 </html>

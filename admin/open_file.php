@@ -92,6 +92,11 @@ switch ($page){
 	if(!file_exists("konten/user_management/user_management.php"))die("File tidak ditemukan");
 	include "konten/user_management/user_management.php";
 	break;
+
+	case 'user-add':
+	if(!file_exists("konten/user_management/user_add.php"))die("file tidak ditemukan");
+	include "konten/user_management/user_add.php";
+	break;
 }
 
 ?>
