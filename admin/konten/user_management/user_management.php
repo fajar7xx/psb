@@ -18,8 +18,8 @@
         </div>
         <!-- Card Body -->
         <div class="card-body">
-          <div class="table-responsive-md">
-          	<table class="table table-bordered" id="psb">
+          <div class="table-responsive">
+          	<table class="table table-striped" id="psb">
           		<thead>
           			<tr>
           				<th class="text-center">No</th>
@@ -27,6 +27,7 @@
           				<th>Username</th>
           				<th>Email</th>
                   <th>Status</th>
+                  <th>AKtif</th>
                   <th>Log</th>
           				<th>Aksi</th>
           			</tr>
@@ -50,12 +51,25 @@
                     <td><?=$data['username'];?></td>
                     <td><?=$data['email_admin'];?></td>
                     <td><?=$data['status_admin'];?></td>
+                    
+                    <td class="text-center">
+                      <?php if($data['aktif_admin'] === 'Y'):?>
+                        <span class="badge badge-success">Aktif</span>
+                      <?php else: ?>
+                        <span class="badge badge-danger">Nonaktif</span>
+                      <?php endif; ?>
+                      </td>
                     <td><?=tgl_indo($data['dt_last_akses']);?></td>
 
-                    <td>
-                      <a href="#" class="btn btn-warning btn-sm" onclick="return confirm('apakah anda ingin menonaktifkan user tersebut')">Disable</a>
-                      <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda ingin mmenghapus user tersebut')">Delete</a>
-                      <a href="#>" class="btn btn-success btn-sm">Edit</a>
+                    <td class="px-0">
+                      <?php if($data['aktif_admin'] === 'Y'):?>
+                        <a href="<?=base_url('admin/konten/user_management/disable.php?id='. $data['id_admin']);?>" class="btn btn-warning btn-sm" onclick="return confirm('apakah anda ingin menonaktifkan user tersebut')">Disable</a>
+                      <?php else: ?>
+                        <a href="<?=base_url('admin/konten/user_management/enable.php?id='. $data['id_admin']);?>" class="btn btn-success btn-sm" onclick="return confirm('apakah anda ingin Mengaktifkan user tersebut')">Enable</a>
+                      <?php endif; ?>
+                      
+                      <a href="<?=base_url('admin/konten/user_management/hapus.php?id='. $data['id_admin']);?>" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda ingin mmenghapus user tersebut')">Delete</a>
+                      <a href="media.php?page=user-edit&id=<?=$data['id_admin'];?>" class="btn btn-primary btn-sm">Edit</a>
                     </td>
                   </tr>
                 <?php  

@@ -121,9 +121,8 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
             <?php if($_SESSION['user']['status_admin'] === "Admin"): ?>
               <a class="collapse-item" href="usman">User Management</a>
             <?php endif; ?>
-            <a class="collapse-item" href="#">Change Password</a>
+            <a class="collapse-item" href="change-pass">Change Password</a>
             <a class="collapse-item" href="#">Profile</a>
-            <a class="collapse-item" href="#">Website Settings</a>
              <a class="collapse-item" href="#">Kompetensi</a>
               <a class="collapse-item" href="#">Mata Pelajaran</a>
           </div>
@@ -223,7 +222,8 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; PSB Sekolah Medan 2019</span>
+            <span>Copyright &copy; 2019 </span>
+            <a href="#" class="text-primary text-decoration-none">PSB Sekolah Medan </a>
           </div>
         </div>
       </footer>

@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
               <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile" name="photo">
+              <input type="file" class="custom-file-input" id="customFile" name="gambar">
               <label class="custom-file-label" for="customFile">Choose file</label>
             </div>
             </div>
@@ -69,7 +69,7 @@
               </div>
             </div>
            <div class="float-right">
-              <a href="#" class="btn btn-warning">Batal</a>
+              <a href="usman" class="btn btn-warning">Batal</a>
               <button type="submit" name="tambah" class="btn btn-success">Simpan</button>
             </div>
           </form>
