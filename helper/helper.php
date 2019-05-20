@@ -102,6 +102,28 @@ function getNis($noreg){
 	return $kd_berikutnya;
 }
 
+function getNoMapel(){
+	global $conn;
+
+	$kode = "MPL";
+	$sekarang = date("ym");
+
+	$queryMp = "SELECT
+				    MAX(id_mapel) AS terakhir
+				FROM
+				    mapel";
+	$sqlMp= mysqli_query($conn, $queryMp)or die("Error: " . mysqli_error($conn));
+	$data = mysqli_fetch_assoc($sqlMp);
+
+	// MPL160603
+	// subtstr(string, start, brpa karakter)
+	$terakhir_mp = $data['terakhir'];
+	$kd_akhir_mp = substr($terakhir_mp, 8, 2);
+	$tambah_kd = $kd_akhir_mp + 1;
+	$kd_berikutnya = $kode.$sekarang.sprintf('%02s', $tambah_kd);
+
+	return $kd_berikutnya;
+}
 
 
 // fungsi menggenerate kode aktifasi ketika di kirim ke email

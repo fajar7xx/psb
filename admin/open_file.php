@@ -107,6 +107,42 @@ switch ($page){
 	if(!file_exists("konten/changepass/changepass.php"))die("file tidak ditemukan");
 	include "konten/changepass/changepass.php";
 	break;
+
+	case 'profile':
+	if(!file_exists("konten/profile/profile.php"))die("file tidak ditemukan");
+	include "konten/profile/profile.php";
+	break;
+
+	case 'kompetensi':
+	if(!file_exists("konten/kompetensi/kompetensi.php"))die("file tidak ditemukan");
+	include "konten/kompetensi/kompetensi.php";
+	break;
+
+	case 'kompetensi-tambah':
+	if(!file_exists("konten/kompetensi/kompetensi_add.php"))die("file tidak ditemukan");
+	include "konten/kompetensi/kompetensi_add.php";
+	break;
+
+	case 'kompetensi-ubah':
+	if(!file_exists("konten/kompetensi/kompetensi_edit.php"))die("file tidak ditemukan");
+	include "konten/kompetensi/kompetensi_edit.php";
+	break;
+
+	case 'mapel':
+	if(!file_exists("konten/mapel/mapel.php"))die("file tidak ditemukan");
+	include "konten/mapel/mapel.php";
+	break;
+
+	case 'mapel-ubah':
+	if(!file_exists("konten/mapel/mapel_edit.php"))die("file tidak ditemukan");
+	include "konten/mapel/mapel_edit.php";
+	break;
+
+	case 'mapel-tambah':
+	if(!file_exists("konten/mapel/mapel_add.php"))die("file tidak ditemukan");
+	include "konten/mapel/mapel_add.php";
+	break;
+
 }
 
 ?>

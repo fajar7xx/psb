@@ -15,7 +15,8 @@
         </div>
         <!-- Card Body -->
         <div class="card-body">
-          <form action="" method="post">
+          <form action="<?=base_url('admin/konten/changepass/proses.php');?>" method="post">
+            <input type="hidden" name="id" value="<?=$_SESSION['user']['id_admin'];?>">
             <div class="form-group">
               <label for="passlama">Current Password</label>
               <input type="password" name="passlama" id="passlama" class="form-control">

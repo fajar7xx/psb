@@ -17,6 +17,12 @@ RewriteRule ^usm$ media.php?page=usm [L]
 RewriteRule ^usman$ media.php?page=usman [L]
 RewriteRule ^user-add$ media.php?page=user-add [L]
 RewriteRule ^change-pass$ media.php?page=change-pass [L]
+RewriteRule ^profile$ media.php?page=profile [L]
+RewriteRule ^kompetensi$ media.php?page=kompetensi [L]
+RewriteRule ^kompetensi-tambah$ media.php?page=kompetensi-tambah [L]
+RewriteRule ^kompetensi-ubah$ media.php?page=kompetensi-ubah [L]
+RewriteRule ^mapel$ media.php?page=mapel [L]
+RewriteRule ^mapel-tambah$ media.php?page=mapel-tambah [L]
 
 RewriteRule ^backupdb$ media.php?page=backupdb [L]
 

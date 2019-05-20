@@ -122,9 +122,11 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
               <a class="collapse-item" href="usman">User Management</a>
             <?php endif; ?>
             <a class="collapse-item" href="change-pass">Change Password</a>
-            <a class="collapse-item" href="#">Profile</a>
-             <a class="collapse-item" href="#">Kompetensi</a>
-              <a class="collapse-item" href="#">Mata Pelajaran</a>
+            <a class="collapse-item" href="profile">Profile</a>
+            <?php if($_SESSION['user']['status_admin'] === "Admin"): ?>
+                <a class="collapse-item" href="kompetensi">Kompetensi</a>
+                <a class="collapse-item" href="mapel">Mata Pelajaran</a>
+            <?php endif; ?>
           </div>
         </div>
       </li>
@@ -318,6 +320,9 @@ $admin = query("SELECT * FROM admin WHERE username = '$username'");
     // 
     $('#password2').hidePassword(true);
     $('#password1').hidePassword(true);
+    $('#newpass1').hidePassword(true);
+    $('#newpass2').hidePassword(true);
+    $('#passlama').hidePassword(true);
   </script>
 </body>
 
