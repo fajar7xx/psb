@@ -402,7 +402,7 @@ CREATE TABLE `views_ujian_masuk` (
 --
 DROP TABLE IF EXISTS `views_ujian_masuk`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `views_ujian_masuk`  AS  select `no_reg` AS `no_reg`,`nm_siswa` AS `nm_siswa`,`nisn` AS `nisn`,`asal_sekolah` AS `asal_sekolah`,`ujian_masuk`.`ket_ujian` AS `ket_ujian` from (`psb` join `ujian_masuk` on((`no_reg` = `ujian_masuk`.`no_reg`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `views_ujian_masuk`  AS  select `psb`.`no_reg` AS `no_reg`,`nm_siswa` AS `nm_siswa`,`nisn` AS `nisn`,`asal_sekolah` AS `asal_sekolah`,`ujian_masuk`.`ket_ujian` AS `ket_ujian` from (`psb` join `ujian_masuk` on((`psb`.`no_reg` = `ujian_masuk`.`no_reg`))) ;
 
 --
 -- Indexes for dumped tables
