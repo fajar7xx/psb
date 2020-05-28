@@ -5,7 +5,7 @@
 // buat penagnannya segera
 require_once "config/koneksi.php";
 
-$kode_aktifasi = $_GET['code'];
+$kode_aktifasi = $_SESSION['kode_aktivasi'];
 
 // echo "ini kode aktifasi nya" . $kode_aktifasi;
 
